@@ -2,3 +2,18 @@
 ---
 
 @import "main";
+
+.math {
+  line-height: 2rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -1rem;
+  padding: 4px;
+}
+
+.denom {
+  border-top: 1px solid;
+}
