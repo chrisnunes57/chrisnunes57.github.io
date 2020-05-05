@@ -1,0 +1,80 @@
+# Site settings
+title: Chris Nunes
+description: >-
+  My name is Chris, and I'm a student at the University of Texas at Austin. I do web development things.
+lang: en-US
+timezone: America/Chicago 
+image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
+repo: https://github.com/chrisnunes57/chrisnunes57.github.io
+mode: dark # default theme "dark" | "light"
+
+# Profile settings
+author:
+  name: Chris Nunes
+  bio: >-
+    Solutions to Leetcode problems and things like that
+  username: username
+  email: chrisnunes57@gmail.com
+  avatar: /assets/img/avatar.jpg
+
+# Url settings
+url: "https://klise.now.sh"
+baseurl:
+permalink: /:title/
+google_analytics:
+fb_appid:
+
+# Collection setting
+collections:
+  posts:
+    output: true
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      comments: false
+
+# Jekyll Compose default front matter
+jekyll_compose:
+  post_default_front_matter:
+    modified:
+    tags: []
+    description:
+  draft_default_front_matter:
+    modified:
+    tags: []
+    description:
+
+# Build settings
+sass:
+  style: compressed
+
+include:
+  - _redirects
+  - .htaccess
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - CHANGELOG.md
+  - README.md
+  - node_modules
+  - CODE_OF_CONDUCT.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sass-converter
+  - jekyll-sitemap
+  - jekyll-postfiles
