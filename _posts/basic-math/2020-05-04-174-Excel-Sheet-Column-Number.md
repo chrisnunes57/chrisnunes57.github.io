@@ -67,7 +67,7 @@ class Solution:
 
 We start at the beginning of the given string and calculate the distance of the current letter from the letter 'A'. We use the ASCII values of the letter to do this, using python's ```ord()``` method.
 
-​		- Example:  ```ord('B') - ord( 'A') = 1```
+​		- Example:  ```ord('B') - ord('A') = 1```
 
  Then, for each new letter, we multiply the current column number by 26 to represent the increase in magnitude.
 
