@@ -3,6 +3,7 @@ layout: post
 title: 171. Excel Sheet Column Number
 date: 2020-05-04 23:14
 description: Solving Leetcode problem "171. Excel Sheet Column Number"
+link: https://leetcode.com/problems/excel-sheet-column-number/
 tag:
   - leetcode
   - easy
@@ -72,3 +73,7 @@ We start at the beginning of the given string and calculate the distance of the 
  Then, for each new letter, we multiply the current column number by 26 to represent the increase in magnitude.
 
 ​		- Reasoning: The 'A' in the column title ```'BA'``` has a value of 1, while the 'A' in the column title ```'AB'``` has a value of 26.
+
+
+
+##### [Try it on Leetcode]({{ page.link }}){:target="_blank"}

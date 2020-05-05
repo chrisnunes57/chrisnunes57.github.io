@@ -7,6 +7,7 @@ tag:
   - leetcode
   - medium
   - dynamic programming
+link: https://leetcode.com/problems/unique-paths-ii/
 ---
 
 A robot is located at the top-left corner of a *m* x *n* grid (marked 'Start' in the diagram below).
@@ -73,3 +74,7 @@ This is essentially the same as the dynamic programming solution for the [previo
 #### Notes
 
 While the [previous Unique Paths](/62-Unique-Paths/) solution that used dynamic programming was not the optimal method, the addition of obstacles makes dynamic programming the fastest option. This solution runs in 32ms, faster than ~100% of other Python solutions.
+
+
+
+##### [Try it on Leetcode]({{ page.link }}){:target="_blank"}
