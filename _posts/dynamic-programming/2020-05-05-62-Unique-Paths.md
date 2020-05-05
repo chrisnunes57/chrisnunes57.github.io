@@ -15,7 +15,7 @@ The robot can only move either down or right at any point in time.  The robot is
 
 How many possible unique paths are there?
 
-![img](https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png)
+![Blank robot maze](https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png)
 
 
 Above is a 7 x 3 grid. How many possible unique paths are there?
@@ -71,7 +71,7 @@ class Solution:
 
 This solution is actually very simple in concept. We loop through each square of the grid, we calculate the score of our current square by adding the scores of the square directly above and directly to the left of it.
 
-![img](/assets/img/robot_maze.png)
+![Partially filled in robot maze](/assets/img/robot_maze.png)
 
 The grid above is partially filled out. As you can see, the score of each square comes from the scores of the squares above and to the left of it. If you finish filling out the grid, the "finish" square will end up with the correct score of 28.
 
@@ -91,7 +91,7 @@ class Solution:
 
 This solution is a little less intuitive, but is much faster than the previous. Basically, you worry about how many moves in each direction you need.
 
-![img](https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png)
+![Blank robot maze](https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png)
 
 For this example, we need to move right 6 times and move down twice. It doesn't matter which order we do these in, as long as we complete all of the moves. So really, what we're doing is calculating all of the different possible ways to combine 6 "right" moves and 2 "down" moves.
 
