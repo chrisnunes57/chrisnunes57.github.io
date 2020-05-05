@@ -3,7 +3,7 @@ title: Chris Nunes
 description: >-
   My name is Chris, and I'm a student at the University of Texas at Austin. I do web development things.
 lang: en-US
-timezone: America/Chicago 
+timezone: America/Chicago
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/chrisnunes57/chrisnunes57.github.io
 mode: dark # default theme "dark" | "light"
@@ -78,5 +78,3 @@ plugins:
   - jekyll-sass-converter
   - jekyll-sitemap
   - jekyll-postfiles
-
-theme: jekyll-theme-minimal
