@@ -71,7 +71,7 @@ class Solution:
 
 This solution is actually very simple in concept. We loop through each square of the grid, we calculate the score of our current square by adding the scores of the square directly above and directly to the left of it.
 
-![img](robot_maze.png)
+![img](/assets/img/robot_maze.png)
 
 The grid above is partially filled out. As you can see, the score of each square comes from the scores of the squares above and to the left of it. If you finish filling out the grid, the "finish" square will end up with the correct score of 28.
 
