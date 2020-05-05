@@ -78,3 +78,5 @@ plugins:
   - jekyll-sass-converter
   - jekyll-sitemap
   - jekyll-postfiles
+
+theme: jekyll-theme-minimal
