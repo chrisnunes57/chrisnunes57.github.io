@@ -113,3 +113,6 @@ The equation for calculating permutations of different kinds of objects is
     6! * 2!
   </span>
 ​</span>
+
+#### Notes
+The Permutation solution is slightly faster than dynamic programming for this problem. My implementation of the dynamic programming solution runs in 32ms, faster than ~50% of other Python solutions. The permutation solution, however, runs in 28ms, faster than ~78% of other Python solutions.
