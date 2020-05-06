@@ -27,19 +27,19 @@ Google has created an environment that allows you to practice finding and exploi
 
 This is the most basic of XSS vulnerabilites. The website displays a text box that allows you to search for a term on the site. When we search for a term such as ```"hi there!"```, we are taken to a regular search results page.
 
-![A blank website with one search bar in the middle](/assets/img/google-xss/google-xss-level-1-query.png)
+![A website showing the words "no results for your query"](/assets/img/google-xss/google-xss-level-1-query.png)
 
 This is pretty normal, and seems like something you would find on any website. However, it doesn't reveal anything about potential XSS vulnerabilities on the site. For that, we have to test the input field with something that it wouldn't normally see. Let's reuse our previous example of ```"hi there!"```, but surround it in an html tag. Our new query will be ```<h1>hi there!</h1>```
 
-![A blank website with one search bar in the middle](/assets/img/google-xss/google-xss-level-1-malicious-query.png)
+![A website with the same error message as before, but with HTML styles](/assets/img/google-xss/google-xss-level-1-malicious-query.png)
 
 This looks different! It looks like the website inserted our HTML code into the page without performing any checks on it! If we look at the source code for the site we're attacking, we can see that this is exactly what happened.
 
-![A blank website with one search bar in the middle](/assets/img/google-xss/google-xss-level-1-code.png)
+![A snippet of code from the source of the website](/assets/img/google-xss/google-xss-level-1-code.png)
 
-Looking at the code above, we can see that the server just takes our input and sticks it right back into the HMTL. So, if anyone wanted to be *malicious* and run javascript on the site, we could just insert a script element, like ```<script>alert("hi there!")</script>script>```. This gets us the following result:
+Looking at the code above, we can see that the server just takes our input and sticks it right back into the HMTL. So, if anyone wanted to be *malicious* and run javascript on the site, we could just insert a script element, like ```<script>alert("hi there!")</script>```. This gets us the following result:
 
-![A blank website with one search bar in the middle](/assets/img/google-xss/google-xss-level-1-solved.png)
+![A message saying that we passed the level](/assets/img/google-xss/google-xss-level-1-solved.png)
 
 We did it! Notice that we didn't have to do anything fancy, like actually "hack" a user or change the website. Just proving that it's possible is enough.
 
@@ -47,7 +47,7 @@ We did it! Notice that we didn't have to do anything fancy, like actually "hack"
 
 #### Notes
 
-![A blank website with one search bar in the middle](/assets/img/google-xss/google-xss-level-1-vulnerable.png)
+![An image of a website that says "I am vulnerable!"](/assets/img/google-xss/google-xss-level-1-vulnerable.png)
 
 Me too :/
 
