@@ -17,7 +17,7 @@ link: https://xss-game.appspot.com/
 
 Google has created an environment that allows you to practice finding and exploiting XSS vulnerabilities. There are 6 levels that range from easiest to hardest.
 
-**The objective of each level:** to successfully execute javascript code on the webpage that they give you. This is my solution to part two of the challenge.
+**The objective of each level:** to successfully execute Javascript code on the webpage that they give you. This is my solution to part two of the challenge.
 
 
 
@@ -25,7 +25,7 @@ Google has created an environment that allows you to practice finding and exploi
 
 ![A blank website with one search bar in the middle](/assets/img/google-xss/google-xss-level-2-basic.png)
 
-This webpage is a little different than the last one. This looks like a forum where you can post messages. Now that we've finished level 1, we're pretty much experts in how cross-site scripting works. You insert the javascript snippet into the text field, hit submit, and then it works. We win.
+This webpage is a little different than the last one. This looks like a forum where you can post messages. Now that we've finished level 1, we're pretty much experts in how cross-site scripting works. You insert the Javascript snippet into the text field, hit submit, and then it works. We win.
 
 Let's bring back our payload that beat the previous level, ```<script>alert("hi there!")</script>```, and see if it has the same effect this time.
 
@@ -43,7 +43,7 @@ The difference is actually not because of *how* we're inserting the payload into
 
 
 
-However, in level two, we're inserting our ```<script>``` tag into the page ***after*** the initial load. These scripts will no longer run, and we have no way of running them ourselves. In order to find a solution, we need to find something that will load after the page has completed its initial load. 
+However, in level two, we're inserting our ```<script>``` tag into the page ***after*** the initial load. These scripts will no longer run, and we have no way of running them ourselves. In order to find a solution, we need to find something that will load after the page has completed its initial load.
 
 
 
@@ -51,9 +51,9 @@ Enter our hero, the ```<img>``` tag! An ```<img>``` tag inserted into the page a
 
 ![A new message appeared with a picture of a dog in it](/assets/img/google-xss/google-xss-level-2-dog.png)
 
-It worked! Now we know that an image inserted into the page will still load like usual, even after the initial page load. All we have left to do is to find a way of using this new knowledge to run javascript.
+It worked! Now we know that an image inserted into the page will still load like usual, even after the initial page load. All we have left to do is to find a way of using this new knowledge to run Javascript.
 
-Luckily for us, the ```<img>``` tag has an attribute called ```onerror``` that can be used to run javascript code if the image fails to load. Let's create a new payload that uses this ```onerror``` property. 
+Luckily for us, the ```<img>``` tag has an attribute called ```onerror``` that can be used to run Javascript code if the image fails to load. Let's create a new payload that uses this ```onerror``` property.
 
 ```
 <img src="swag B)" onerror="alert('hi there level two!')"/>

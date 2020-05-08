@@ -17,7 +17,7 @@ link: https://xss-game.appspot.com/
 
 Google has created an environment that allows you to practice finding and exploiting XSS vulnerabilities. There are 6 levels that range from easiest to hardest.
 
-**The objective of each level:** to successfully execute javascript code on the webpage that they give you. This is my solution to part one of the challenge.
+**The objective of each level:** to successfully execute Javascript code on the webpage that they give you. This is my solution to part one of the challenge.
 
 
 
@@ -37,7 +37,7 @@ This looks different! It looks like the website inserted our HTML code into the 
 
 ![A snippet of code from the source of the website](/assets/img/google-xss/google-xss-level-1-code.png)
 
-Looking at the code above, we can see that the server just takes our input and sticks it right back into the HMTL. So, if anyone wanted to be *malicious* and run javascript on the site, we could just insert a script element, like ```<script>alert("hi there!")</script>```. This gets us the following result:
+Looking at the code above, we can see that the server just takes our input and sticks it right back into the HMTL. So, if anyone wanted to be *malicious* and run Javascript on the site, we could just insert a script element, like ```<script>alert("hi there!")</script>```. This gets us the following result:
 
 ![A message saying that we passed the level](/assets/img/google-xss/google-xss-level-1-solved.png)
 
