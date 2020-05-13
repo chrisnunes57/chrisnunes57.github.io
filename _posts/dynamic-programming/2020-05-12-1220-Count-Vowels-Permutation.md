@@ -91,4 +91,10 @@ For example, the vowel "a" can only be followed by the vowel "e". So, the new va
 
 We do the same for other letters, and eventually our table will have all of the combinations that start with each letter. We sum those up and perform the modulus operation, and we're set.
 
+
+
+#### Notes 
+
+There are more efficient solutions that use 2D arrays, but I'm not big brained enough to understand those yet.
+
 ##### [Try it on Leetcode]({{ page.link }}){:target="_blank"}
