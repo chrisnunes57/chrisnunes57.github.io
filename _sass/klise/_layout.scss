@@ -63,6 +63,15 @@
     float: right;
   }
 
+  .trigger-container {
+    display: flex;
+    align-items: center;
+
+    @include media-query($on-mobile) {
+      display: block;
+    }
+  }
+
   .menu-trigger {
     display: none;
   }
@@ -89,8 +98,17 @@
 
     &.rss {
       position: relative;
-      bottom: -3px;
       outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20px;
+
+      .rss-text {
+        color: #ED812E;
+        position: relative;
+        left: 4px;
+      }
     }
 
     @include media-query($on-mobile) {
