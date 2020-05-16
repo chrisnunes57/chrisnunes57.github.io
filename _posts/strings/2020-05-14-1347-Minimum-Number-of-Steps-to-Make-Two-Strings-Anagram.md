@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 1347. Minimum Number of Steps to Make Two Strings Anagram
-date: 2020-05-14 20:37
+date: 2020-05-16 16:02
 description: Solving Leetcode problem "1347. Minimum Number of Steps to Make Two Strings Anagram"
 tag:
   - leetcode
