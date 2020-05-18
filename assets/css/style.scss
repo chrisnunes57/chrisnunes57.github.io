@@ -17,3 +17,18 @@
 .denom {
   border-top: 1px solid;
 }
+
+.counts {
+  margin-bottom: 20px;
+}
+
+.counts .tag {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+body[data-theme="dark"] .counts .tag {
+    color: #ff5277;
+}
