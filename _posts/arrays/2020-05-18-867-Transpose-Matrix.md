@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 867. Transpose Matrix
-date: 2020-05-18 12:37
+date: 2020-05-19 12:37
 description: Solving Leetcode problem "867. Transpose Matrix"
 tag:
   - leetcode
@@ -17,7 +17,7 @@ The transpose of a matrix is the matrix flipped over it's main diagonal, switchi
 
 ![img](https://assets.leetcode.com/uploads/2019/10/20/hint_transpose.png)
 
- 
+
 
 **Example 1:**
 
@@ -33,7 +33,7 @@ Input: [[1,2,3],[4,5,6]]
 Output: [[1,4],[2,5],[3,6]]
 ```
 
- 
+
 
 **Note:**
 
@@ -47,20 +47,20 @@ Output: [[1,4],[2,5],[3,6]]
 ```python
 class Solution:
     def transpose(self, A: List[List[int]]) -> List[List[int]]:
-        
+
         result = [[0] * len(A) for _ in A[0]]
-        
+
         for r, row in enumerate(A):
             for c, col in enumerate(row):
-                
+
                 result[c][r] = col
-                
+
         return result
 ```
 
 This solution is kind of hard to trace, but it's very simple in theory. We create a matrix `result` that is the size of the transposed matrix. We then loop through the given matrix item by item, adding the item to the opposite position in the result.
 
-What this means is that the item at `grid[0][2]` will end up at position `grid[2][0]`. 
+What this means is that the item at `grid[0][2]` will end up at position `grid[2][0]`.
 
 
 
@@ -69,7 +69,7 @@ What this means is that the item at `grid[0][2]` will end up at position `grid[2
 ```python
 class Solution:
     def transpose(self, A: List[List[int]]) -> List[List[int]]:
-        
+
         return zip(*A)
 ```
 
