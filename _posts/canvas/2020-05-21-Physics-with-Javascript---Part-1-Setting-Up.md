@@ -110,18 +110,9 @@ ctx.stroke();
 </p>
 
 
-Whoa. Beautiful. It's absolutely incredible what we can do with Canvas. Here is the code for everything that we have so far.
+Whoa. Beautiful. It's absolutely incredible what we can do with Canvas. The finished code after this tutorial can be seen in the CodePen [here.](https://codepen.io/chrisnunes57/pen/GRpzGNr)
 
-<p>
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="result" data-user="chrisnunes57" data-slug-hash="GRpzGNr" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Canvas Collision Detection - Part 0">
-  <span>See the Pen <a href="https://codepen.io/chrisnunes57/pen/GRpzGNr">
-  Canvas Collision Detection - Part 0</a> by Chris Nunes (<a href="https://codepen.io/chrisnunes57">@chrisnunes57</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-</p>
-
-As you can see, we used a few more command than we talked about before. The extra commands are just to fill the circle with white, and then draw the black outline.
+As you can see in the CodePen demo, we used a few more commands than we talked about before. The extra commands are just to fill the circle with white, and then draw the black outline.
 
 
 

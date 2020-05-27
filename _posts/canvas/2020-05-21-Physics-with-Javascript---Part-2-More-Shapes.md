@@ -151,16 +151,7 @@ for (let i = 0; i < 20; i++) {
 </p>
 Again, you can see that the circles all change location when you refresh the page. See if you can play around with this code and generate a bunch of circles with random sizes!
 
-Here is all the code you need to recreate the final demo:
-
-<p>
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="result" data-user="chrisnunes57" data-slug-hash="abvXKNr" data-preview="true" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Canvas Collision Detection - Part 2">
-  <span>See the Pen <a href="https://codepen.io/chrisnunes57/pen/abvXKNr">
-  Canvas Collision Detection - Part 2</a> by Chris Nunes (<a href="https://codepen.io/chrisnunes57">@chrisnunes57</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-</p>
+The finished code after this tutorial can be seen in the CodePen [here.](https://codepen.io/chrisnunes57/pen/abvXKNr)
 
 
 
