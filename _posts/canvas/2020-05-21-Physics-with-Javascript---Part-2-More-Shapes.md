@@ -14,6 +14,8 @@ link:
 
 In the previous post, we set up an HTML page with a Canvas element. Then, we drew up one single circle in the middle of the page. In this post, we'll create a `Circle` class so that we can easily generate new circles in our canvas.
 
+If you didn't read that previous post, the code for it is online [here](https://codepen.io/chrisnunes57/pen/GRpzGNr). You should definitely read it though. Please give me more web traffic.
+
 #### Creating a Javascript Class
 
 A lot of people don't actually realize it, but ever since the release of ECMAScript in 2015, you can actually use the `class` keyword in Javascript to replace prototype-based classes. It doesn't introduce any object-oriented behavior to the language, but allows you to simulate it pretty well.
@@ -31,6 +33,8 @@ class Circle {
 If you're familiar with object-oriented programming, you know what this is. If not, you can read about it [on the MDN website.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) Essentially, we're able to create objects with the properties that a circle would have.
 
 For example, creating a variable like `let circ = new Circle(10)` will create a Circle object with a `size` property of 10.
+
+#### More Properties
 
 Right now, our object only has one property: the radius of the circle. Here are a few more variables that we'll want to keep track of:
 
@@ -122,6 +126,7 @@ c.draw();
 </script>
 </p>
 
+#### Drawing Multiple Circles
 
 Cool! If you refresh the page, you'll see that the circle changes location each time.  Now that we can create circles really easily, let's have some fun with it.
 
