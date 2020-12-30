@@ -2,6 +2,11 @@
   url: /
   external: false
 
+- title: crossword
+  url: /crossword
+  external: false
+
+
 # Example:
 # - title: github
 #   url: https://github.com/piharpi/jekyll-klise
