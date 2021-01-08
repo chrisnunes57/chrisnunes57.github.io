@@ -3,14 +3,44 @@ layout: default
 home: true
 ---
 
-{% include counts.html posts = site.posts %}
+<article>
+  <div class="container">
+    <article class="home-content">
+      <h1>Chris <span class="light">Nunes</span></h1>
+      <p>I am currently a student at the University of Texas at Austin, finishing the senior year of my computer science degree.
+        In the summer of 2021, I will begin 
+        <a href="https://www.linkedin.com/in/chris-nunes/" target="_blank" rel="noopener noreferrer">full-time work</a> as a Software Engineer at Microsoft.
+      </p>
+      <p>I am interested in web development, cybersecurity, and software development. In my free time, I enjoy playing 
+        <a href="https://www.chess.com/member/chrisnunes" target="_blank" rel="noopener noreferrer">chess</a>, climbing, music, and playing any variety of sports.
+      </p>
+      <p class="arrow-trigger"><span class="fake-link">Click</span> the chessboard to challenge me to a game!</p>
+      <svg width="888.72" height="140.62" version="1.1" viewBox="0 0 888.72 140.62" xmlns="http://www.w3.org/2000/svg"
+        xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <g transform="translate(-233.96 -649.11)" fill="none" stroke="#000" stroke-width="1">
+          <path class="first" d="m234.16 726.06c326.69 90.708 604.55 96.553 887.83-70.753" />
+          <path class="second" d="m1122 655.31-47.161-5.4522" />
+          <path class="third" d="m1102.9 698.8 19.05-43.486" />
+        </g>
+      </svg>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/chris-nunes/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+        <a href="https://github.com/chrisnunes57" target="_blank" rel="noopener noreferrer">Github</a>
+        <a href="https://www.instagram.com/chris.__.nunes/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
 
-<h4 class="posts-item-note">Recent Posts</h4>
-{% for post in site.posts %}
-<article class="post-item">
-  <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
-  <h4 class="post-item-title">
-    <a href="{{ post.url }}">{{ post.title | escape }}</a>
-  </h4>
+    </article>
+    <div class="chessboard">
+      <div class="board-wrapper">
+        <div class="face center" id="board1" style="width: 350px;"></div>
+        <img class="face left" src="../assets/img/placeholder-left.png" />
+        <img class="face bottom" src="../assets/img/placeholder-bottom.png" />
+      </div>
+    </div>
+  </div>
+  
 </article>
-{% endfor %}
+
+<script src="../assets/js/chess.js"></script>
+<script src="../assets/js/chessGame.js" type="module"></script>

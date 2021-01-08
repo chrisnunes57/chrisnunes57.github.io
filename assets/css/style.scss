@@ -3,6 +3,10 @@
 
 @import "main";
 
+.light {
+  font-weight: $light-weight;
+}
+
 .math {
   line-height: 2rem;
   display: inline-flex;
@@ -35,4 +39,157 @@ body[data-theme="dark"] .counts .tag {
 
 p.html {
   text-align: center;
+}
+
+.chessboard {
+  perspective: 2000px;
+  perspective-origin: bottom left;
+  padding: 0.05px;
+  margin-left: 20px;
+  margin-top: 30vh;
+  animation: float 4s ease-in-out infinite;
+}
+
+.board-wrapper {
+  transition: 0.4s all;
+  position: relative;
+  transform-style: preserve-3d;
+  margin-top: 240px;
+  transform: rotateX(40deg) rotateZ(-30deg) rotateX(10deg);
+  
+  #board1 {
+    box-shadow: -50px 60px 20px 10px rgba(0, 0, 0, 0.1);
+    z-index: -2;
+  }
+
+  .face {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .center {
+    transform: rotateX(0deg) translateZ(225px);
+  }
+
+  .left {
+    height: 344px;
+    transform: rotateY(-90deg) translateZ(20.5px) translateX(218px) translateY(13px);
+    z-index: 10;
+  }
+
+  .bottom {
+    width: 346px;
+    transform: rotateX(90deg) translateZ(-333.5px) translateY(211px) translateX(-0.5px);
+    z-index: 10;
+  }
+}
+
+.home-content {
+  position: relative;
+  margin: 80px 80px 140px 140px;
+  font-weight: $normal-weight;
+  max-width: 540px;
+  
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    font-weight: $light-weight;
+  }
+
+  svg {
+    width: 650px;
+    margin-top: -85px;
+    margin-left: 40px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.arrow-trigger {
+
+  & + svg {
+    
+    path {
+      transition: 0.3s all;
+    }
+    
+    & .first {
+      stroke-dasharray: 920;
+      stroke-dashoffset: 920;
+      transition-delay: 0.3s;
+    }
+
+    & .second {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      transition-delay: 0s;
+    }
+
+    & .third {
+      stroke-dasharray: 100;
+      stroke-dashoffset: -100;
+      transition-delay: 0s;
+    }
+  }
+
+  &:hover {
+    & + svg {
+
+      & .first {
+        transition-delay: 0s;
+      }
+
+      & .second, & .third {
+        transition-delay: 0.3s;
+      }
+
+      & .first, & .second, & .third {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+nav {
+  margin-left: 140px;
+
+  a {
+    margin-right: 1.5rem;
+  }
+}
+
+.socials {
+
+  margin-top: 20px;
+
+  a {
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
 }
