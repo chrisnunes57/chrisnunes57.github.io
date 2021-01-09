@@ -1,9 +1,12 @@
 <div class="navbar" role="navigation">
     <!-- TODO: NAVIGATION -->
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Projects</a>
-      <a href="#">Blog</a>
-      <a href="#">Resume</a>
+      {% for item in site.data.menus %}
+        {% if item.external == true%}
+          <a class="{% if item.url == page.url %}active{% endif %}" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+        {% else %}
+          <a class="{% if item.url == page.url or item.title == include.pageTab %}active{% endif %}" href="{{ item.url }}">{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
     </nav>
 </div>

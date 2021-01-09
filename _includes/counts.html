@@ -4,16 +4,13 @@
       {% for post in site.posts %}
           {% if post.tags contains "leetcode" %}
               {% capture _ %}{% increment leet_count %}{% endcapture %}
-          {% endif %}
-      {% endfor %}
-      {% for post in site.posts %}
-          {% if post.tags contains "things like that" %}
+          {% else %}
               {% capture _ %}{% increment things_count %}{% endcapture %}
           {% endif %}
       {% endfor %}
       <a class="tag" href="/tags#leetcode">Leetcode - {{ leet_count }}</a>
       <span>,</span>
-      <a class="tag" href="/tags#things-like-that">Things like that - {{ things_count }}</a>
+      <a class="tag" href="/tags#things-like-that">Other Stuff - {{ things_count }}</a>
   </span>
 </div>
 

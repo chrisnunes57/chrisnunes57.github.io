@@ -10,22 +10,22 @@ tag:
 link: https://leetcode.com/problems/count-vowels-permutation/
 ---
 
-Given an integer `n`, your task is to count how many strings of length `n` can be formed under the following rules:
+Given an integer `n`{:.language-markdown}, your task is to count how many strings of length `n`{:.language-markdown} can be formed under the following rules:
 
-- Each character is a lower case vowel (`'a'`, `'e'`, `'i'`, `'o'`, `'u'`)
-- Each vowel `'a'` may only be followed by an `'e'`.
-- Each vowel `'e'` may only be followed by an `'a'` or an `'i'`.
-- Each vowel `'i'` **may not** be followed by another `'i'`.
-- Each vowel `'o'` may only be followed by an `'i'` or a `'u'`.
-- Each vowel `'u'` may only be followed by an `'a'.`
+- Each character is a lower case vowel (`'a'`{:.language-markdown}, `'e'`{:.language-markdown}, `'i'`{:.language-markdown}, `'o'`{:.language-markdown}, `'u'`{:.language-markdown})
+- Each vowel `'a'`{:.language-markdown} may only be followed by an `'e'`{:.language-markdown}.
+- Each vowel `'e'`{:.language-markdown} may only be followed by an `'a'`{:.language-markdown} or an `'i'`{:.language-markdown}.
+- Each vowel `'i'`{:.language-markdown} **may not** be followed by another `'i'`{:.language-markdown}.
+- Each vowel `'o'`{:.language-markdown} may only be followed by an `'i'`{:.language-markdown} or a `'u'`{:.language-markdown}.
+- Each vowel `'u'`{:.language-markdown} may only be followed by an `'a'.`{:.language-markdown}
 
-Since the answer may be too large, return it modulo `10^9 + 7.`
+Since the answer may be too large, return it modulo `10^9 + 7.`{:.language-markdown}
 
 
 
 **Example 1:**
 
-```
+```markdown
 Input: n = 1
 Output: 5
 Explanation: All possible strings are: "a", "e", "i" , "o" and "u".
@@ -33,7 +33,7 @@ Explanation: All possible strings are: "a", "e", "i" , "o" and "u".
 
 **Example 2:**
 
-```
+```markdown
 Input: n = 2
 Output: 10
 Explanation: All possible strings are: "ae", "ea", "ei", "ia", "ie", "io", "iu", "oi", "ou" and "ua".
@@ -41,7 +41,7 @@ Explanation: All possible strings are: "ae", "ea", "ei", "ia", "ie", "io", "iu",
 
 **Example 3:**
 
-```
+```markdown
 Input: n = 5
 Output: 68
 ```
@@ -50,7 +50,7 @@ Output: 68
 
 **Constraints:**
 
-- `1 <= n <= 2 * 10^4`
+- `1 <= n <= 2 * 10^4`{:.language-markdown}
 
 
 
@@ -85,9 +85,9 @@ class Solution:
 
 For this solution, I wasn't sure exactly how to start. I ended up with a very simple solution, that kind of works by following the steps given in the problem.
 
-The algorithm is straightforward, in a DP way. We have a table that maps each letter to the number of combinations starting with that letter that are possible. We loop for ```n - 1``` iterations, and update our table with new values each iteration. This new value is the sum of all combinations starting with a letter that can be combined with our current letter.
+The algorithm is straightforward, in a DP way. We have a table that maps each letter to the number of combinations starting with that letter that are possible. We loop for ```n - 1```{:.language-markdown} iterations, and update our table with new values each iteration. This new value is the sum of all combinations starting with a letter that can be combined with our current letter.
 
-For example, the vowel "a" can only be followed by the vowel "e". So, the new value of ```table["a"]``` is going to be ```table["e"]```, as these are all of the combinations that start with "e". 
+For example, the vowel "a" can only be followed by the vowel "e". So, the new value of ```table["a"]```{:.language-markdown} is going to be ```table["e"]```{:.language-markdown}, as these are all of the combinations that start with "e". 
 
 We do the same for other letters, and eventually our table will have all of the combinations that start with each letter. We sum those up and perform the modulus operation, and we're set.
 

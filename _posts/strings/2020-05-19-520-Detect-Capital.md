@@ -24,7 +24,7 @@ Otherwise, we define that this word doesn't use capitals in a right way.
 
 **Example 1:**
 
-```
+```markdownn
 Input: "USA"
 Output: True
 ```
@@ -33,7 +33,7 @@ Output: True
 
 **Example 2:**
 
-```
+```markdownn
 Input: "FlaG"
 Output: False
 ```
@@ -53,7 +53,7 @@ class Solution:
         return word.isupper() or word.islower() or word.istitle()
 ```
 
-Using built-in Python functions we can solve this one really quickly. The `isupper()` method checks to see whether it's all uppercase, the `islower()` method checks to see whether it's all lowercase, and `istitle()` checks to see if it only has the first letter capitalized.
+Using built-in Python functions we can solve this one really quickly. The `isupper()`{:.language-markdown} method checks to see whether it's all uppercase, the `islower()`{:.language-markdown} method checks to see whether it's all lowercase, and `istitle()`{:.language-markdown} checks to see if it only has the first letter capitalized.
 
 ### Solution 2: The Hard Way
 

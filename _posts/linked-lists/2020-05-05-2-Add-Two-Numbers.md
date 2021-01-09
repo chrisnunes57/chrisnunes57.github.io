@@ -16,7 +16,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 
 **Example:**
 
-```
+```markdown
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
@@ -57,11 +57,11 @@ class Solution:
 
 This solution is kinda long, but it is straightforward. We basically loop through the linked lists and add the numbers the same way we would by hand.
 
-The algorithm is pretty simple: we loop through each digit of ```L1``` and ```L2``` simultaneously, and combine them to get the value of the new node. If it the new value would be 10 or greater, we need to carry the 1 to the next digit.
+The algorithm is pretty simple: we loop through each digit of ```L1```{:.language-markdown} and ```L2```{:.language-markdown} simultaneously, and combine them to get the value of the new node. If it the new value would be 10 or greater, we need to carry the 1 to the next digit.
 
 There is one potential edge case that arises when you finish looping through the lists but there is still a carry value leftover.
 
-  * Example: Both input lists are `[5]`, so you combine them and get `[0]`. Then, you forget to add the `[1]` at the end.
+  * Example: Both input lists are `[5]`{:.language-markdown}, so you combine them and get `[0]`{:.language-markdown}. Then, you forget to add the `[1]`{:.language-markdown} at the end.
 
 #### Notes
 

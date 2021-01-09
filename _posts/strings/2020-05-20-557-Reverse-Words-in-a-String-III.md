@@ -14,7 +14,7 @@ Given a  string, you need to reverse the order of characters in each word within
 
 **Example 1:**
 
-```
+```markdown
 Input: "Let's take LeetCode contest"
 Output: "s'teL ekat edoCteeL tsetnoc"
 ```
@@ -39,7 +39,7 @@ class Solution:
         return " ".join(s)
 ```
 
-In this solution we rely heavily on Python's ability to easily reverse strings using `[::-1]` string slicing. We split up the initial string by space, then reversed each individual word using string slicing. 
+In this solution we rely heavily on Python's ability to easily reverse strings using `[::-1]`{:.language-markdown} string slicing. We split up the initial string by space, then reversed each individual word using string slicing. 
 
 However, let's pretend we were doing this in a programming language that didn't have really easy ways to reverse lists built in.
 

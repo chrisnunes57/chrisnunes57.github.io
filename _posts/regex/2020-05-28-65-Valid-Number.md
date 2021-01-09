@@ -13,20 +13,20 @@ link: https://leetcode.com/problems/valid-number/
 Validate if a given string can be interpreted as a decimal number.
 
 Some examples:
- `"0"` => `true`
- `" 0.1 "` => `true`
- `"abc"` => `false`
- `"1 a"` => `false`
- `"2e10"` => `true`
- `" -90e3  "` => `true`
- `" 1e"` => `false`
- `"e3"` => `false`
- `" 6e-1"` => `true`
- `" 99e2.5 "` => `false`
- `"53.5e93"` => `true`
- `" --6 "` => `false`
- `"-+3"` => `false`
- `"95a54e53"` => `false`
+ - `"0"`{:.language-markdown} => `true`{:.language-markdown}
+ - `" 0.1 "`{:.language-markdown} => `true`{:.language-markdown}
+ - `"abc"`{:.language-markdown} => `false`{:.language-markdown}
+ - `"1 a"`{:.language-markdown} => `false`{:.language-markdown}
+ - `"2e10"`{:.language-markdown} => `true`{:.language-markdown}
+ - `" -90e3  "`{:.language-markdown} => `true`{:.language-markdown}
+ - `" 1e"`{:.language-markdown} => `false`{:.language-markdown}
+ - `"e3"`{:.language-markdown} => `false`{:.language-markdown}
+ - `" 6e-1"`{:.language-markdown} => `true`{:.language-markdown}
+ - `" 99e2.5 "`{:.language-markdown} => `false`{:.language-markdown}
+ - `"53.5e93"`{:.language-markdown} => `true`{:.language-markdown}
+ - `" --6 "`{:.language-markdown} => `false`{:.language-markdown}
+ - `"-+3"`{:.language-markdown} => `false`{:.language-markdown}
+ - `"95a54e53"`{:.language-markdown} => `false`{:.language-markdown}
 
 **Note:** It is intended for the problem statement to be ambiguous. You should gather all requirements up front before  implementing one. However, here is a list of characters that can be in a valid decimal number:
 

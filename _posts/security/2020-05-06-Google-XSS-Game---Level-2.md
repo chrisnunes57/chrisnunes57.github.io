@@ -27,7 +27,7 @@ Google has created an environment that allows you to practice finding and exploi
 
 This webpage is a little different than the last one. This looks like a forum where you can post messages. Now that we've finished level 1, we're pretty much experts in how cross-site scripting works. You insert the Javascript snippet into the text field, hit submit, and then it works. We win.
 
-Let's bring back our payload that beat the previous level, ```<script>alert("hi there!")</script>```, and see if it has the same effect this time.
+Let's bring back our payload that beat the previous level, ```<script>alert("hi there!")</script>```{:.language-markdown}, and see if it has the same effect this time.
 
 ![A message appeared on the screen, but there is nothing in it](/assets/img/google-xss/google-xss-level-2-initial.png)
 
@@ -39,27 +39,27 @@ If we use **Inspect Element** to investigate what's going on, we can see that ou
 
 
 
-The difference is actually not because of *how* we're inserting the payload into the website, it's due to *when* the insertion is happening. In the first level, the ```<script>``` tag that we used was added in ***before*** the page loaded. That means that when we loaded that page containing the payload, it was already there waiting to be executed.
+The difference is actually not because of *how* we're inserting the payload into the website, it's due to *when* the insertion is happening. In the first level, the ```<script>```{:.language-markdown} tag that we used was added in ***before*** the page loaded. That means that when we loaded that page containing the payload, it was already there waiting to be executed.
 
 
 
-However, in level two, we're inserting our ```<script>``` tag into the page ***after*** the initial load. These scripts will no longer run, and we have no way of running them ourselves. In order to find a solution, we need to find something that will load after the page has completed its initial load.
+However, in level two, we're inserting our ```<script>```{:.language-markdown} tag into the page ***after*** the initial load. These scripts will no longer run, and we have no way of running them ourselves. In order to find a solution, we need to find something that will load after the page has completed its initial load.
 
 
 
-Enter our hero, the ```<img>``` tag! An ```<img>``` tag inserted into the page after the initial load will still try to render itself. Let's test this with a payload of ```<img src="https://picsum.photos/id/237/100/150" />```
+Enter our hero, the ```<img>```{:.language-markdown} tag! An ```<img>```{:.language-markdown} tag inserted into the page after the initial load will still try to render itself. Let's test this with a payload of ```<img src="https://picsum.photos/id/237/100/150" />```{:.language-markdown}
 
 ![A new message appeared with a picture of a dog in it](/assets/img/google-xss/google-xss-level-2-dog.png)
 
 It worked! Now we know that an image inserted into the page will still load like usual, even after the initial page load. All we have left to do is to find a way of using this new knowledge to run Javascript.
 
-Luckily for us, the ```<img>``` tag has an attribute called ```onerror``` that can be used to run Javascript code if the image fails to load. Let's create a new payload that uses this ```onerror``` property.
+Luckily for us, the ```<img>```{:.language-markdown} tag has an attribute called ```onerror```{:.language-markdown} that can be used to run Javascript code if the image fails to load. Let's create a new payload that uses this ```onerror```{:.language-markdown} property.
 
 ```
 <img src="swag B)" onerror="alert('hi there level two!')"/>
 ```
 
-Notice that we give it a very fake URL for the image! If we pass in a valid URL and the image successfully loads, our ```onerror``` event will never be triggered. When we submit this payload, two things happen:
+Notice that we give it a very fake URL for the image! If we pass in a valid URL and the image successfully loads, our ```onerror```{:.language-markdown} event will never be triggered. When we submit this payload, two things happen:
 
 ![A message appeared on the screen with an image that failed to load](/assets/img/google-xss/google-xss-level-2-final.png)
 

@@ -12,7 +12,7 @@ tag:
 link: https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
 ---
 
-Given `head` which is a reference node to a singly-linked list. The value of each  node in the linked list is either 0 or 1. The linked list holds the  binary representation of a number.
+Given `head`{:.language-markdown} which is a reference node to a singly-linked list. The value of each  node in the linked list is either 0 or 1. The linked list holds the  binary representation of a number.
 
 Return the *decimal value* of the number in the linked list.
 
@@ -22,7 +22,7 @@ Return the *decimal value* of the number in the linked list.
 
 ![img](https://assets.leetcode.com/uploads/2019/12/05/graph-1.png)
 
-```
+```markdown
 Input: head = [1,0,1]
 Output: 5
 Explanation: (101) in base 2 = (5) in base 10
@@ -30,28 +30,28 @@ Explanation: (101) in base 2 = (5) in base 10
 
 **Example 2:**
 
-```
+```markdown
 Input: head = [0]
 Output: 0
 ```
 
 **Example 3:**
 
-```
+```markdown
 Input: head = [1]
 Output: 1
 ```
 
 **Example 4:**
 
-```
+```markdown
 Input: head = [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0]
 Output: 18880
 ```
 
 **Example 5:**
 
-```
+```markdown
 Input: head = [0,0]
 Output: 0
 ```
@@ -61,8 +61,8 @@ Output: 0
 **Constraints:**
 
 - The Linked List is not empty.
-- Number of nodes will not exceed `30`.
-- Each node's value is either `0` or `1`.
+- Number of nodes will not exceed `30`{:.language-markdown}.
+- Each node's value is either `0`{:.language-markdown} or `1`{:.language-markdown}.
 
 
 
@@ -81,13 +81,13 @@ class Solution:
         return result
 ```
 
-In this solution we have an integer, `result`, in which we store our current result. As we loop through each node in the linked list, we take the bit value at each node and update our result accordingly. 
+In this solution we have an integer, `result`{:.language-markdown}, in which we store our current result. As we loop through each node in the linked list, we take the bit value at each node and update our result accordingly. 
 
 The algorithm goes like this:
 
 - For each node in the list
-  - **Left Shift** `result` by 1 bit to make space for the new bit value
-  - Set result equal to `result OR new_bit`
+  - **Left Shift** `result`{:.language-markdown} by 1 bit to make space for the new bit value
+  - Set result equal to `result OR new_bit`{:.language-markdown}
   - Update our current node and move to the next one
 - When we're finished, return our result.
 

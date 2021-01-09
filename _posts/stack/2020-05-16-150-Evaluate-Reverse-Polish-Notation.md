@@ -12,7 +12,7 @@ link: https://leetcode.com/problems/evaluate-reverse-polish-notation/
 
 Evaluate the value of an arithmetic expression in [Reverse Polish Notation](http://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
-Valid operators are `+`, `-`, `*`, `/`. Each operand may be an integer or another expression.
+Valid operators are `+`{:.language-markdown}, `-`{:.language-markdown}, `*`{:.language-markdown}, `/`{:.language-markdown}. Each operand may be an integer or another expression.
 
 **Note:**
 
@@ -21,7 +21,7 @@ Valid operators are `+`, `-`, `*`, `/`. Each operand may be an integer or anothe
 
 **Example 1:**
 
-```
+```markdown
 Input: ["2", "1", "+", "3", "*"]
 Output: 9
 Explanation: ((2 + 1) * 3) = 9
@@ -29,7 +29,7 @@ Explanation: ((2 + 1) * 3) = 9
 
 **Example 2:**
 
-```
+```markdown
 Input: ["4", "13", "5", "/", "+"]
 Output: 6
 Explanation: (4 + (13 / 5)) = 6
@@ -37,7 +37,7 @@ Explanation: (4 + (13 / 5)) = 6
 
 **Example 3:**
 
-```
+```markdown
 Input: ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
 Output: 22
 Explanation: 
@@ -119,7 +119,7 @@ This solution uses the same algorithm as the previous, but is refactored to use 
 
 #### Notes
 
-I ran into issues solving this in Python, because both the `/` and `//` operators in Python behave differently than the division that we want to achieve. Instead, we use `int(a/b)`. 
+I ran into issues solving this in Python, because both the `/`{:.language-markdown} and `//`{:.language-markdown} operators in Python behave differently than the division that we want to achieve. Instead, we use `int(a/b)`{:.language-markdown}. 
 
 
 

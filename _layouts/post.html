@@ -1,5 +1,6 @@
 ---
 layout: compress
+isPost: true
 ---
 
 <!DOCTYPE html>
@@ -8,8 +9,8 @@ layout: compress
 {% include header.html %}
 
 <body>
-  {% include navbar.html %}
-  <div class="wrapper post">
+  {% include navbar.html pageTab="Blog"%}
+  <div class="wrapper post container">
     <main class="page-content" aria-label="Content">
       <article itemscope itemtype="https://schema.org/BlogPosting">
 
@@ -67,7 +68,7 @@ layout: compress
   </div>
 
   {% include footer.html %}
-
+  <script src="../assets/js/prism.js"></script>
 </body>
 
 </html>
