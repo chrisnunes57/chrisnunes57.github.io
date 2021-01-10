@@ -50,7 +50,7 @@ body {
   font-family: $sans-family;
 }
 
-a, .fake-link {
+a, .fake-link, .post-nav-item .post-title {
   color: black;
   text-decoration: none;
   position: relative;
@@ -100,4 +100,4 @@ img {
   }
 }
 
-@import "code";
+@import "code", "general";
