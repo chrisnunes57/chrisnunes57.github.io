@@ -96,7 +96,7 @@ The haptic pattern in Figure 4 corresponds to the emotion of anger. Anger is con
 
 Anger has the highest intensity of any haptic feedback that we programmed and is one of the sharpest. This was done deliberately in an attempt to simulate a large range of haptic feedback. In order to have a diverse set of feedback, there needs to be an emotion with very low intensity and an emotion with very high intensity.
 
-![A graph showing the pattern of the haptic vibration for the "fear" emotion](/assets/img/touchy-feely/Fear.png)
+![A graph showing the pattern of the haptic vibration for the "fear" emotion](/assets/img/touchy-feely/fear.png)
 
 <p class="caption">Graph of haptic feedback for "fear"</p>
 
