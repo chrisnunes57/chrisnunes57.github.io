@@ -2,7 +2,6 @@
 layout: project
 title: Touchy Feely - Using Haptic Emojis to Represent Emotions in Instant Messaging
 description: Touchy Feely - Using Haptic Emojis to Represent Emotions in Instant Messaging
-link: https://poly-shoe.surge.sh
 thumbnail: /assets/img/touchy-feely/thumbnail.png
 ---
 
