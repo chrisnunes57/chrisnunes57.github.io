@@ -1,29 +1,78 @@
 import { Board } from "./Board.js";
 
+const chessboardImage = document.getElementById("begin-game");
+const chessWrapper = document.getElementById("wrapper");
+const boardFace = document.getElementById("board1");
+const exitGame = document.getElementById("exit-game");
+const status = document.getElementById("status");
 const challengeButton = document.getElementById("challenge");
+const controls = document.getElementById("controls");
 const games = {};
 const boards = {};
 
 let board = new Board();
 
-console.log(localStorage)
-// localStorage.setItem("gameID", "H3tMvKmR")
+challengeButton.onclick = async(e) => {
+    // // create challenge
+    // let URL = `https://lichess.org/api/challenge/chrisnunes`
 
-// begin playing
-// beginGame();
+    // const response = await fetch(URL, {
+    //     method: "POST",
+    //     headers: {
+    //         "Authorization": "Bearer 3wErqfxmNrXAP3jR"
+    //     }
+    // });
 
-challengeButton.onclick = async (e) => {
-    // create challenge
-    let URL = `https://lichess.org/api/challenge/chrisnunes`
+    // beginGame();
 
-    const response = await fetch(URL, {
-        method: "POST",
-        headers: {
-            "Authorization": "Bearer 3wErqfxmNrXAP3jR"
+    setStatus("Challenge sent! Waiting for response...")
+    challengeButton.style.display = "none";
+
+}
+
+chessboardImage.onclick = (e) => {
+
+    if (!chessboardImage.classList.contains("active")) {
+        showChessboard();
+    }
+}
+
+function setStatus(message) {
+    status.innerText = message;
+}
+
+function showChessboard() {
+    let currentPos = boardFace.getBoundingClientRect();
+    let boardStyle = getComputedStyle(boardFace);
+    let challengeStyle = getComputedStyle(chessboardImage);
+
+    let midpointX = window.innerWidth / 2;
+    let midpointY = window.innerHeight / 2;
+
+    let scaleFactor = 1.5;
+
+    let newX = midpointX - currentPos.x - (parseInt(boardStyle.width) / 2) + 20;
+    let newY = midpointY - currentPos.y - (parseInt(challengeStyle.height) / 2) + (parseInt(boardStyle.height) / 6);
+
+    let newStyle = `--data-x: ${newX}px; --data-y: ${newY}px;`;
+
+    chessWrapper.style = newStyle;
+    boardFace.style = `--data-scale: ${scaleFactor}`;
+
+    chessboardImage.classList.add("active");
+    window.setTimeout(() => { controls.classList.add("active");}, 700);
+
+    exitGame.onclick = (e) => {
+        if (!boardFace.contains(e.target)) {
+            hideChessboard();
         }
-    });
+    }
+}
 
-    beginGame();
+function hideChessboard() {
+    exitGame.onclick = null;
+    chessboardImage.classList.remove("active");
+    controls.classList.remove("active");
 }
 
 function beginGame() {

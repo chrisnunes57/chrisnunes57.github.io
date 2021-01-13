@@ -14,7 +14,7 @@ home: true
       <p>I am interested in web development, cybersecurity, and software development. In my free time, I enjoy playing 
         <a href="https://www.chess.com/member/chrisnunes" target="_blank" rel="noopener noreferrer">chess</a>, climbing, music, and playing any variety of sports.
       </p>
-      <!-- <p class="mobile">View this website on a larger screen to play me in chess!</p>
+      <p class="mobile">View this website on a larger screen to play me in chess!</p>
       <p class="arrow-trigger desktop"><span class="fake-link">Click</span> the chessboard to challenge me to a game!</p>
       <svg class="desktop" width="888.72" height="140.62" version="1.1" viewBox="0 0 888.72 140.62" xmlns="http://www.w3.org/2000/svg"
         xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -25,8 +25,7 @@ home: true
           <path class="third" d="m1102.9 698.8 19.05-43.486" />
         </g>
       </svg>
-       -->
-      <p class="">Coming soon: the ability to play me in chess on this site!</p>
+      
 
       <div class="socials">
         <a href="https://www.linkedin.com/in/chris-nunes/" target="_blank" rel="noopener noreferrer">Linkedin</a>
@@ -35,12 +34,17 @@ home: true
       </div>
 
     </article>
-    <div class="chessboard desktop">
-      <div class="board-wrapper">
+    <div class="chessboard desktop"  id="begin-game">
+      <div class="board-wrapper" id="wrapper">
         <div class="face center" id="board1" style="width: 350px;"></div>
         <img class="face left" src="../assets/img/placeholder-left.png" />
         <img class="face bottom" src="../assets/img/placeholder-bottom.png" />
       </div>
+    </div>
+    <div class="controls desktop" id="controls">
+      <button id="challenge">Send Challenge</button>
+      <h3 id="status"></h3>
+      <button id="exit-game">Close Game</button>
     </div>
   </div>
   
