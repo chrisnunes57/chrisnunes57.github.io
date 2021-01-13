@@ -12,9 +12,9 @@ link: https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-
 
 
 
-Given two equal-size strings `s` and `t`. In one step you can choose **any character** of `t` and replace it with **another character**.
+Given two equal-size strings `s`{:.language-markdown} and `t`{:.language-markdown}. In one step you can choose **any character** of `t`{:.language-markdown} and replace it with **another character**.
 
-Return *the minimum number of steps* to make `t` an anagram of `s`.
+Return *the minimum number of steps* to make `t`{:.language-markdown} an anagram of `s`{:.language-markdown}.
 
 An **Anagram** of a string is a string that contains the same characters with a different (or the same) ordering.
 
@@ -22,7 +22,7 @@ An **Anagram** of a string is a string that contains the same characters with a 
 
 **Example 1:**
 
-```
+```markdown
 Input: s = "bab", t = "aba"
 Output: 1
 Explanation: Replace the first 'a' in t with b, t = "bba" which is anagram of s.
@@ -30,7 +30,7 @@ Explanation: Replace the first 'a' in t with b, t = "bba" which is anagram of s.
 
 **Example 2:**
 
-```
+```markdown
 Input: s = "leetcode", t = "practice"
 Output: 5
 Explanation: Replace 'p', 'r', 'a', 'i' and 'c' from t with proper characters to make t anagram of s.
@@ -38,7 +38,7 @@ Explanation: Replace 'p', 'r', 'a', 'i' and 'c' from t with proper characters to
 
 **Example 3:**
 
-```
+```markdown
 Input: s = "anagram", t = "mangaar"
 Output: 0
 Explanation: "anagram" and "mangaar" are anagrams.
@@ -46,14 +46,14 @@ Explanation: "anagram" and "mangaar" are anagrams.
 
 **Example 4:**
 
-```
+```markdown
 Input: s = "xxyyzz", t = "xxyyzz"
 Output: 0
 ```
 
 **Example 5:**
 
-```
+```markdown
 Input: s = "friend", t = "family"
 Output: 4
 ```
@@ -62,9 +62,9 @@ Output: 4
 
 **Constraints:**
 
-- `1 <= s.length <= 50000`
-- `s.length == t.length`
-- `s` and `t` contain lower-case English letters only.
+- `1 <= s.length <= 50000`{:.language-markdown}
+- `s.length == t.length`{:.language-markdown}
+- `s`{:.language-markdown} and `t`{:.language-markdown} contain lower-case English letters only.
 
 
 
@@ -84,7 +84,7 @@ class Solution:
 
 This is one of the simplest solutions I could think of. Since we know that both of the input strings are the same length, we can find the solution by finding the number of letters that are in string 2 and not string 1. This will leave us with only the letters that are different, and the number of different letters is our answer.
 
-However, it runs a LOT slower than other solutions. This is because of a few things. First, our solution is of order ```O(n * n)```, where ```n``` is the length of the strings. This can be optimized to ```O(n)```, as we see in the second solution. Additionally, this solution deals with a lot of string concatenation. String are immutable, which means that you can't modify them the same way you would arrays. Instead, you have to create a copy of the string and modify the copy.
+However, it runs a LOT slower than other solutions. This is because of a few things. First, our solution is of order ```O(n * n)```{:.language-markdown}, where ```n```{:.language-markdown} is the length of the strings. This can be optimized to ```O(n)```{:.language-markdown}, as we see in the second solution. Additionally, this solution deals with a lot of string concatenation. String are immutable, which means that you can't modify them the same way you would arrays. Instead, you have to create a copy of the string and modify the copy.
 
 This is ***dummy*** slow.
 
@@ -116,11 +116,11 @@ class Solution:
 
 
 
-In this solution, we use a ```dict``` to keep track of the count of every letter. We increment through every letter in our first word, and store the counts in our dictionary.
+In this solution, we use a ```dict```{:.language-markdown} to keep track of the count of every letter. We increment through every letter in our first word, and store the counts in our dictionary.
 
-Lets use an example: ```minSteps("abba", "dcba")```
+Lets use an example: ```minSteps("abba", "dcba")```{:.language-markdown}
 
-If we looped through the word ```"abba"```, our dict would look like this:
+If we looped through the word ```"abba"```{:.language-markdown}, our dict would look like this:
 
 ```json
 {
@@ -131,7 +131,7 @@ If we looped through the word ```"abba"```, our dict would look like this:
 
 
 
-Next, we compare the second word. For every letter in the next word, we subtract one from its frequency, which is basically the opposite of what we did with the first word. So if the next word to process was ```"dcba"```, our dict would look like this (although not necessarily in sorted order).
+Next, we compare the second word. For every letter in the next word, we subtract one from its frequency, which is basically the opposite of what we did with the first word. So if the next word to process was ```"dcba"```{:.language-markdown}, our dict would look like this (although not necessarily in sorted order).
 
 
 
@@ -152,7 +152,7 @@ As you can see, the dict shows the differences in frequency for each letter. Int
 
 #### Notes
 
-We established that the first solution was order ```O(n * n)```. The optimal solution is order ```O(n)```, as we have no nested loops or functions.
+We established that the first solution was order ```O(n * n)```{:.language-markdown}. The optimal solution is order ```O(n)```{:.language-markdown}, as we have no nested loops or functions.
 
 
 

@@ -10,12 +10,14 @@ layout: compress
 <body>
   {% include navbar.html %}
   <div class="wrapper">
-    <header class="header">
-      <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}.</h1>
-    </header>
-    <main class="page-content" aria-label="Content">
-      {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
-    </main>
+    <div class="container">
+      <header class="header">
+        <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}</h1>
+      </header>
+      <main class="page-content" aria-label="Content">
+        {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
+      </main>
+    </div>
     {% include footer.html %}
   </div>
 </body>

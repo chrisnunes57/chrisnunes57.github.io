@@ -1,0 +1,30 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+{% include header.html %}
+
+<body>
+  {% include navbar.html %}
+  <div class="blog container">
+    <header class="header">
+      <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}</h1>
+    </header>
+    <main class="page-content" aria-label="Content">
+      {% for post in site.posts %}
+        <article class="post-item">
+          <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          <h4 class="post-item-title">
+            <a href="{{ post.url }}">{{ post.title | escape }}</a>
+          </h4>
+        </article>
+      {% endfor %}
+    </main>
+    {% include footer.html %}
+  </div>
+</body>
+
+</html>

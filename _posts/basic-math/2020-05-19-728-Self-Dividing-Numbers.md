@@ -12,7 +12,7 @@ link: https://leetcode.com/problems/self-dividing-numbers/
 
 A *self-dividing number* is a number that is divisible by every digit it contains.
 
-For example, 128 is a self-dividing number because `128 % 1 == 0`, `128 % 2 == 0`, and `128 % 8 == 0`.
+For example, 128 is a self-dividing number because `128 % 1 == 0`{:.language-markdown}, `128 % 2 == 0`{:.language-markdown}, and `128 % 8 == 0`{:.language-markdown}.
 
 Also, a self-dividing number is not allowed to contain the digit zero.
 
@@ -20,7 +20,7 @@ Given a lower and upper number bound, output a list of every possible self divid
 
 **Example 1:**
 
-```
+```markdown
 Input: 
 left = 1, right = 22
 Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]
@@ -30,7 +30,7 @@ Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]
 
 **Note:**
 
-The boundaries of each input argument are `1 <= left <= right <= 10000`.
+The boundaries of each input argument are `1 <= left <= right <= 10000`{:.language-markdown}.
 
 ### Solution
 
@@ -61,7 +61,7 @@ class Solution:
         return True
 ```
 
-This solution is longer than most, because I created a helper method to check if a number was self-dividing. Basically, we iterate over each digit of the number by doing basic math. We can return the last digit of a number by doing `number % 10`, and we can truncate the last digit of a number by doing `number / 10`.
+This solution is longer than most, because I created a helper method to check if a number was self-dividing. Basically, we iterate over each digit of the number by doing basic math. We can return the last digit of a number by doing `number % 10`{:.language-markdown}, and we can truncate the last digit of a number by doing `number / 10`{:.language-markdown}.
 
 We use these properties to go through the given list of numbers and check if each one is a self dividing number.
 

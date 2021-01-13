@@ -11,7 +11,7 @@ link: https://leetcode.com/problems/big-countries/
 
 ---
 
-There is a table `World`.
+There is a table `World`{:.language-markdown}.
 
 ```
 +-----------------+------------+------------+--------------+---------------+

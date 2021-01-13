@@ -14,13 +14,13 @@ The Tribonacci sequence Tn is defined as follows:
 
 T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
 
-Given `n`, return the value of Tn.
+Given `n`{:.language-markdown}, return the value of Tn.
 
  
 
 **Example 1:**
 
-```
+```markdown
 Input: n = 4
 Output: 4
 Explanation:
@@ -30,7 +30,7 @@ T_4 = 1 + 1 + 2 = 4
 
 **Example 2:**
 
-```
+```markdown
 Input: n = 25
 Output: 1389537
 ```
@@ -39,8 +39,8 @@ Output: 1389537
 
 **Constraints:**
 
-- `0 <= n <= 37`
-- The answer is guaranteed to fit within a 32-bit integer, ie. `answer <= 2^31 - 1`.
+- `0 <= n <= 37`{:.language-markdown}
+- The answer is guaranteed to fit within a 32-bit integer, ie. `answer <= 2^31 - 1`{:.language-markdown}.
 
 ### Solution 1: Recursion with Memoization
 
@@ -65,9 +65,9 @@ This solution is similar to the recursive solution to solving the [regular fibon
 
 ### Solution 2: Cheese 🧀
 
-There is actually a way to solve this method in order `O(1)` time and `O(n)` space. We do this by manually calculating the first 37 tribonacci numbers and hard-coding them into our solution.
+There is actually a way to solve this method in order `O(1)`{:.language-markdown} time and `O(n)`{:.language-markdown} space. We do this by manually calculating the first 37 tribonacci numbers and hard-coding them into our solution.
 
-Note: we use the first 37 values because Leetcode only tests for values in the range of `0 <= n <= 37`. 
+Note: we use the first 37 values because Leetcode only tests for values in the range of `0 <= n <= 37`{:.language-markdown}. 
 
 ```python
 class Solution:

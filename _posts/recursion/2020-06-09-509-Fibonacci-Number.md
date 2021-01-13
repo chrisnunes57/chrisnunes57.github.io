@@ -10,20 +10,20 @@ tag:
 link: https://leetcode.com/problems/fibonacci-number/
 ---
 
-The **Fibonacci numbers**, commonly denoted `F(n)` form a sequence, called the **Fibonacci sequence**, such that each number is the sum of the two preceding ones, starting from `0` and `1`. That is,
+The **Fibonacci numbers**, commonly denoted `F(n)`{:.language-markdown} form a sequence, called the **Fibonacci sequence**, such that each number is the sum of the two preceding ones, starting from `0`{:.language-markdown} and `1`{:.language-markdown}. That is,
 
-```
+```markdown
 F(0) = 0,   F(1) = 1
 F(N) = F(N - 1) + F(N - 2), for N > 1.
 ```
 
-Given `N`, calculate `F(N)`.
+Given `N`{:.language-markdown}, calculate `F(N)`{:.language-markdown}.
 
  
 
 **Example 1:**
 
-```
+```markdown
 Input: 2
 Output: 1
 Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
@@ -31,7 +31,7 @@ Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
 
 **Example 2:**
 
-```
+```markdown
 Input: 3
 Output: 2
 Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
@@ -39,7 +39,7 @@ Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
 
 **Example 3:**
 
-```
+```markdown
 Input: 4
 Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
@@ -49,7 +49,7 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
 **Note:**
 
-0 ≤ `N` ≤ 30.
+0 ≤ `N`{:.language-markdown} ≤ 30.
 
 ### Solution 1: Basic Recursion
 
@@ -66,19 +66,19 @@ class Solution:
         return self.fib(N - 1) + self.fib(N - 2)
 ```
 
-This is the simplest possible solution, which uses recursion. The two base cases are if `N == 0` and if `N == 1`. These are the situations in which we have no more work to do, and we can just return the value of `N`.
+This is the simplest possible solution, which uses recursion. The two base cases are if `N == 0`{:.language-markdown} and if `N == 1`{:.language-markdown}. These are the situations in which we have no more work to do, and we can just return the value of `N`{:.language-markdown}.
 
-If `N` is greater that 0 or 1, then we have some extra work to do. We know that `fib(N) == fib(N - 1) + fib(N - 2)`, so we return those numbers in our solution. 
+If `N`{:.language-markdown} is greater that 0 or 1, then we have some extra work to do. We know that `fib(N) == fib(N - 1) + fib(N - 2)`{:.language-markdown}, so we return those numbers in our solution. 
 
-This solution works fine and is easy to understand, but if you dig deeper, its inefficiency becomes clear. It's easier to spot with a visual: here is an image showing the chain of method calls if we try to calculate `fib(6)`.
+This solution works fine and is easy to understand, but if you dig deeper, its inefficiency becomes clear. It's easier to spot with a visual: here is an image showing the chain of method calls if we try to calculate `fib(6)`{:.language-markdown}.
 
 ![A graph showing a lot of method calls](/assets/img/fibonacci.jpeg)
 
-If we look at the general shape of the graph, we can see that each method call creates two more method calls beneath it. This leads to an exponential growth as we move down the tree, and an exponential time complexity of `O(2 ^ n)`. 
+If we look at the general shape of the graph, we can see that each method call creates two more method calls beneath it. This leads to an exponential growth as we move down the tree, and an exponential time complexity of `O(2 ^ n)`{:.language-markdown}. 
 
-You can also see that many method calls are calculated multiple times. For instance, we calculate `fib(3)` three times, and each one creates 4 more methods. If we could simply store the value of `fib(3)`, we could save ourselves a lot of additional computations.
+You can also see that many method calls are calculated multiple times. For instance, we calculate `fib(3)`{:.language-markdown} three times, and each one creates 4 more methods. If we could simply store the value of `fib(3)`{:.language-markdown}, we could save ourselves a lot of additional computations.
 
-As slow as this solution may be, it is still good enough to pass the Leetcode test cases. However, that is because they only test our code with `0 <= N <= 30`. If we even barely increase `N` to 40, our solution is too slow. So, we look for a faster way.
+As slow as this solution may be, it is still good enough to pass the Leetcode test cases. However, that is because they only test our code with `0 <= N <= 30`{:.language-markdown}. If we even barely increase `N`{:.language-markdown} to 40, our solution is too slow. So, we look for a faster way.
 
 ### Solution 2: Memoization
 
@@ -98,7 +98,7 @@ class Solution:
         return self.cache[N]
 ```
 
-Memoization is basically a fancy word for storing the result of a method call so that we don't have to re-calculate it later. In this solution, we create a cache to store the result from each `fib` call. 
+Memoization is basically a fancy word for storing the result of a method call so that we don't have to re-calculate it later. In this solution, we create a cache to store the result from each `fib`{:.language-markdown} call. 
 
 This brings our time complexity down to something reasonable, and runs much faster.
 
@@ -125,7 +125,7 @@ class Solution:
 
 "Bottom-Up" in this case means that, unlike with our recursive solution, we start with the lowest values, 1 and 0. We then build our way up to the desired value of N, which is our final solution.
 
-This is the most efficient solution we've seen so far. It has time complexity of `O(n)`, as well as space efficiency of `O(n)`. However, there is one more solution that works in `O(1)` time AND space.
+This is the most efficient solution we've seen so far. It has time complexity of `O(n)`{:.language-markdown}, as well as space efficiency of `O(n)`{:.language-markdown}. However, there is one more solution that works in `O(1)`{:.language-markdown} time AND space.
 
 ### Solution 4: Massive Brain 🤯
 

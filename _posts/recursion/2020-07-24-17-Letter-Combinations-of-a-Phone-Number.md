@@ -10,7 +10,7 @@ tag:
 link: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 ---
 
-Given a string containing digits from `2-9` inclusive, return all possible letter combinations that the number could represent.
+Given a string containing digits from `2-9`{:.language-markdown} inclusive, return all possible letter combinations that the number could represent.
 
 A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
 
@@ -18,7 +18,7 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
 
 **Example:**
 
-```
+```markdown
 Input: "23"
 Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 ```
@@ -64,13 +64,13 @@ class Solution:
 
 This solution isn't super complex to code, but if you're not familiar with recursion, it'll be complex to understand. I'm not great with recursion myself, but I'll try to explain (for my own sake). At a basic level, this program goes through every digit provided in the list and iterates through all of their letters.
 
-This function tracks two things: a current combination of letters that we're building, and a list `next_digits`, which tracks all of the digits in the given string that we're yet to add to our current combination. We also have a dictionary `mapping`, which provides a mapping between each digit and the letters associated with it.
+This function tracks two things: a current combination of letters that we're building, and a list `next_digits`{:.language-markdown}, which tracks all of the digits in the given string that we're yet to add to our current combination. We also have a dictionary `mapping`{:.language-markdown}, which provides a mapping between each digit and the letters associated with it.
 
 We start off the same way that every recursive method does: the base case, where we stop recursing if a condition is met. In this case, we stop calling the method when we have run out of digits to add to the current combination. 
 
-If there are still digits remaining to test, we loop through each letter that the digit is associated with. Then, for each letter, we first remove the current digit from the `next_digits` list and then add the current letter to the `combination` variable. Using these updated values, we recur and the same process happens again.
+If there are still digits remaining to test, we loop through each letter that the digit is associated with. Then, for each letter, we first remove the current digit from the `next_digits`{:.language-markdown} list and then add the current letter to the `combination`{:.language-markdown} variable. Using these updated values, we recur and the same process happens again.
 
-When the program runs out of digits and letters to process, it adds the current 	`combination` to a list of combinations. In the end, we return this list of combinations as our final answer.
+When the program runs out of digits and letters to process, it adds the current 	`combination`{:.language-markdown} to a list of combinations. In the end, we return this list of combinations as our final answer.
 
 ### Notes
 

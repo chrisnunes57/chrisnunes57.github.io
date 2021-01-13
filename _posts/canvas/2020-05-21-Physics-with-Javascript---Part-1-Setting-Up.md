@@ -20,7 +20,7 @@ I've used a lot of Javascript and Canvas before, but I've never been able to do 
 
 #### Setting up our Canvas
 
-The first thing we have to do is set up an empty HTML document with a `<canvas>` element in it. That would look like this:
+The first thing we have to do is set up an empty HTML document with a `<canvas>`{:.language-markdown}{:.language-markdown} element in it. That would look like this:
 
 ```html
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ The first thing we have to do is set up an empty HTML document with a `<canvas>`
 </html>
 ```
 
-We give it the id `myCanvas` so that we have a way to reference it in our Javascript code later. We give it a width and height to make it look nice. We can also add in some styles to make our canvas look snazzy:
+We give it the id `myCanvas`{:.language-markdown}{:.language-markdown} so that we have a way to reference it in our Javascript code later. We give it a width and height to make it look nice. We can also add in some styles to make our canvas look snazzy:
 
 ```html
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ We give it the id `myCanvas` so that we have a way to reference it in our Javasc
 </style>
 <canvas id="myCanvas" width="500" height="500" />
 </p>
-There. Isn't it beautiful? This is the canvas we'll be working with. To actually start messing around with it, we need to use Javascript. You can either put this code in a `<script>` tag in your main HTML file, or in a separate Javascript file entirely.
+There. Isn't it beautiful? This is the canvas we'll be working with. To actually start messing around with it, we need to use Javascript. You can either put this code in a `<script>`{:.language-markdown}{:.language-markdown} tag in your main HTML file, or in a separate Javascript file entirely.
 
 If you were to include this code in your main HTML file, this is what it would look like:
 
@@ -79,7 +79,7 @@ If you were to include this code in your main HTML file, this is what it would l
 </html>
 ```
 
-To start out, we get a reference to our canvas using the [`getElementById()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) method and the ID of our HTML element.
+To start out, we get a reference to our canvas using the [`getElementById()`{:.language-markdown}](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) method and the ID of our HTML element.
 
 We can then get the [drawing context](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) of our canvas, which allows us create shapes, patterns, and really whatever we want on the canvas.
 
@@ -92,9 +92,9 @@ This code alone doesn't do anything visual, but now we have everything we need i
 
 #### Drawing our first shape
 
-First, we'll draw a circle. The method to draw a circle is `arc`, and it takes five parameters: `ctx.arc(x, y, radius, startAngle, endAngle)`. For complete circles, the start angle will always be **0** and the end angle will always be **2π**. Therefore, we only have to worry  about the coordinates and the size.
+First, we'll draw a circle. The method to draw a circle is `arc`{:.language-markdown}, and it takes five parameters: `ctx.arc(x, y, radius, startAngle, endAngle)`{:.language-markdown}. For complete circles, the start angle will always be **0** and the end angle will always be **2π**. Therefore, we only have to worry  about the coordinates and the size.
 
-For example, the method `ctx.arc(250, 250, 20, 0, 2 * Math.PI)` will draw a an arc at coordinate `(250, 250)` with a radius of 20 pixels.
+For example, the method `ctx.arc(250, 250, 20, 0, 2 * Math.PI)`{:.language-markdown} will draw a an arc at coordinate `(250, 250)`{:.language-markdown} with a radius of 20 pixels.
 
 <p class="html">
 <canvas id="myCanvas2" width="500" height="500" />
@@ -118,4 +118,4 @@ As you can see in the CodePen demo, we used a few more commands than we talked a
 
 #### Conclusion
 
-That's all that we'll do for this post. In the next one, we'll create a reusable `Circle()` class that we can use to create many, many, many circles.
+That's all that we'll do for this post. In the next one, we'll create a reusable `Circle()`{:.language-markdown} class that we can use to create many, many, many circles.

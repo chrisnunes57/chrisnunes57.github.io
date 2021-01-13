@@ -10,7 +10,7 @@ tag:
 link: https://leetcode.com/problems/sort-array-by-parity/
 ---
 
-Given an array `A` of non-negative integers, return an array consisting of all the even elements of `A`, followed by all the odd elements of `A`.
+Given an array `A`{:.language-markdown} of non-negative integers, return an array consisting of all the even elements of `A`{:.language-markdown}, followed by all the odd elements of `A`{:.language-markdown}
 
 You may return any answer array that satisfies this condition.
 
@@ -18,7 +18,7 @@ You may return any answer array that satisfies this condition.
 
 **Example 1:**
 
-```
+```markdown
 Input: [3,1,2,4]
 Output: [2,4,3,1]
 The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
@@ -28,8 +28,8 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
 
 **Note:**
 
-1. `1 <= A.length <= 5000`
-2. `0 <= A[i] <= 5000`
+1. `1 <= A.length <= 5000`{:.language-markdown}
+2. `0 <= A[i] <= 5000`{:.language-markdown}
 
 
 
@@ -54,7 +54,7 @@ class Solution:
 
 This solution is the most basic one I could conceive. First, we create an empty array to store our result. Then we loop through the given list twice: the first time to add all of the even numbers, and the second time to add all of the odd numbers.
 
-This is an easy solution, and it is order `O(n)`, which is the best time complextity we can get for this problem. However, this solution also requires `O(n)` space due to us creating a separate list to return.
+This is an easy solution, and it is order `O(n)`{:.language-markdown}, which is the best time complextity we can get for this problem. However, this solution also requires `O(n)`{:.language-markdown} space due to us creating a separate list to return.
 
 How would we solve this without using any additional data structures?
 
@@ -84,7 +84,7 @@ This solution uses part of the quicksort algorithm. We start with two pointers, 
 
 Eventually, our pointers meet in the middle, and we know that both halves of the array are sorted. [This Medium post](https://medium.com/karuna-sehgal/a-quick-explanation-of-quick-sort-7d8e2563629b) has a really good graphic demonstrating how QuickSort works.
 
-As you can see, this solution uses no additional data structures, and in the end we return the same list that we were given. And although QuickSort is usually order `O(n * log(n))`, this solution is order `O(n)` because we only pass through the list once.
+As you can see, this solution uses no additional data structures, and in the end we return the same list that we were given. And although QuickSort is usually order `O(n * log(n))`{:.language-markdown}, this solution is order `O(n)`{:.language-markdown} because we only pass through the list once.
 
 
 

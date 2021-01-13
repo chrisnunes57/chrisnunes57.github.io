@@ -12,13 +12,13 @@ link: https://leetcode.com/problems/min-cost-climbing-stairs/submissions/
 
 
 
-On a staircase, the `i`-th step has some non-negative cost `cost[i]` assigned (0 indexed).
+On a staircase, the `i`{:.language-markdown}-th step has some non-negative cost `cost[i]`{:.language-markdown} assigned (0 indexed).
 
 Once you pay the cost, you can either climb one or two steps. You need  to find minimum cost to reach the top of the floor, and you can either  start from the step with index 0, or the step with index 1.
 
 **Example 1:**
 
-```
+```markdown
 Input: cost = [10, 15, 20]
 Output: 15
 Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
@@ -28,7 +28,7 @@ Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
 
 **Example 2:**
 
-```
+```markdown
 Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
 Output: 6
 Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
@@ -38,8 +38,8 @@ Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3]
 
 **Note:**
 
-1. `cost` will have a length in the range `[2, 1000]`.
-2. Every `cost[i]` will be an integer in the range `[0, 999]`.
+1. `cost`{:.language-markdown} will have a length in the range `[2, 1000]`{:.language-markdown}.
+2. Every `cost[i]`{:.language-markdown} will be an integer in the range `[0, 999]`{:.language-markdown}.
 
 
 
@@ -65,7 +65,7 @@ This problem might originally seem complicated, or like it requires a method lik
 
 We take the first two values and manually put them into our table. Then, to populate the rest of the table, we follow this algorithm:
 
-```
+```markdown
 - For each "stair" in the staircase
     - Add the cost from the table
     - Compare the costs of the stairs 1 and 2 positions below current

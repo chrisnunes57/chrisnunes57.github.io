@@ -8,11 +8,12 @@ layout: compress
 <body data-theme="{{ site.mode }}">
   {% include navbar.html %}
   <div class="wrapper">
-    {% include author.html %}
     <main aria-label="Content">
       {{ content }}
     </main>
-    {% include footer.html %}
+    {% if !page.home %}
+      {% include footer.html %}
+    {% endif %}
   </div>
 </body>
 </html>

@@ -10,7 +10,7 @@ tag:
 link: 344. Reverse String
 ---
 
-Write a function that reverses a string. The input string is given as an array of characters `char[]`.
+Write a function that reverses a string. The input string is given as an array of characters `char[]`{:.language-markdown}.
 
 Do not allocate extra space for another array, you must do this by **modifying the input array [in-place](https://en.wikipedia.org/wiki/In-place_algorithm)** with O(1) extra memory.
 
@@ -20,14 +20,14 @@ You may assume all the characters consist of [printable ascii characters](https:
 
 **Example 1:**
 
-```
+```markdown
 Input: ["h","e","l","l","o"]
 Output: ["o","l","l","e","h"]
 ```
 
 **Example 2:**
 
-```
+```markdown
 Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 ```
@@ -58,7 +58,7 @@ This solution uses two pointers: one to the front of the list and one to the end
 
 #### Notes
 
-This would be trivial to do in Python, since just calling `string.reverse()` would work. However, that felt like cheating, and I wanted to do it the long way.
+This would be trivial to do in Python, since just calling `string.reverse()`{:.language-markdown} would work. However, that felt like cheating, and I wanted to do it the long way.
 
 
 

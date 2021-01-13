@@ -1,6 +1,18 @@
-- title: home
+- title: Home
   url: /
   external: false
+
+- title: Projects
+  url: /projects.html
+  external: false
+
+- title: Blog
+  url: /blog.html
+  external: false
+
+- title: Resume
+  url: /Chris_Nunes_Resume.pdf
+  external: true
 
 
 # Example:

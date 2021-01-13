@@ -10,42 +10,42 @@ tag:
 link: https://leetcode.com/problems/parsing-a-boolean-expression/
 ---
 
-Return the result of evaluating a given boolean `expression`, represented as a string.
+Return the result of evaluating a given boolean `expression`{:.language-markdown}, represented as a string.
 
 An expression can either be:
 
-- `"t"`, evaluating to `True`;
-- `"f"`, evaluating to `False`;
-- `"!(expr)"`, evaluating to the logical NOT of the inner expression `expr`;
-- `"&(expr1,expr2,...)"`, evaluating to the logical AND of 2 or more inner expressions `expr1, expr2, ...`;
-- `"|(expr1,expr2,...)"`, evaluating to the logical OR of 2 or more inner expressions `expr1, expr2, ...`
+- `"t"`{:.language-markdown}, evaluating to `True`{:.language-markdown};
+- `"f"`{:.language-markdown}, evaluating to `False`{:.language-markdown};
+- `"!(expr)"`{:.language-markdown}, evaluating to the logical NOT of the inner expression `expr`{:.language-markdown};
+- `"&(expr1,expr2,...)"`{:.language-markdown}, evaluating to the logical AND of 2 or more inner expressions `expr1, expr2, ...`{:.language-markdown};
+- `"|(expr1,expr2,...)"`{:.language-markdown}, evaluating to the logical OR of 2 or more inner expressions `expr1, expr2, ...`{:.language-markdown}
 
 
 
 **Example 1:**
 
-```
+```markdown
 Input: expression = "!(f)"
 Output: true
 ```
 
 **Example 2:**
 
-```
+```markdown
 Input: expression = "|(f,t)"
 Output: true
 ```
 
 **Example 3:**
 
-```
+```markdown
 Input: expression = "&(t,f)"
 Output: false
 ```
 
 **Example 4:**
 
-```
+```markdown
 Input: expression = "|(&(t,f,t),!(t))"
 Output: false
 ```
@@ -54,9 +54,9 @@ Output: false
 
 **Constraints:**
 
-- `1 <= expression.length <= 20000`
-- `expression[i]` consists of characters in `{'(', ')', '&', '|', '!', 't', 'f', ','}`.
-- `expression` is a valid expression representing a boolean, as given in the description.
+- `1 <= expression.length <= 20000`{:.language-markdown}
+- `expression[i]` consists of characters in `{'(', ')', '&', '|', '!', 't', 'f', ','}`{:.language-markdown}.
+- `expression`{:.language-markdown} is a valid expression representing a boolean, as given in the description.
 
 
 
@@ -105,7 +105,7 @@ class Solution:
 
 This solution is really long, so it can be hard to understand at first. In essence we're parsing this boolean expression as if it were in [Polish/Prefix notation](https://wiki.c2.com/?PolishNotation). We iterate through the list once, using a stack to keep track of what we have already seen. Our algorithm goes something like this:
 
-```
+```markdown
 - For each token in the expression:
     - If token is a 't' or 'f' value
         - Add True/False to the stack

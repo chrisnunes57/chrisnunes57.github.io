@@ -29,11 +29,11 @@ The third level gives us a webpage that lets us peruse a few different images. U
 
 Here are the URLs for the three pages of the website:
 
-- ```https://xss-game.appspot.com/level3/frame#1```
-- ```https://xss-game.appspot.com/level3/frame#2```
-- ```https://xss-game.appspot.com/level3/frame#3```
+- ```https://xss-game.appspot.com/level3/frame#1```{:.language-markdown}
+- ```https://xss-game.appspot.com/level3/frame#2```{:.language-markdown}
+- ```https://xss-game.appspot.com/level3/frame#3```{:.language-markdown}
 
-It looks like the only thing that changes is the final part of the URL, the ```#``` and the number following it. Let's look at the source code and see if we can figure out how the server is using this parameter. 
+It looks like the only thing that changes is the final part of the URL, the ```#```{:.language-markdown} and the number following it. Let's look at the source code and see if we can figure out how the server is using this parameter. 
 
 ```javascript
 var html = "Image " + parseInt(num) + "<br>";
@@ -42,7 +42,7 @@ html += "<img src='/static/level3/cloud" + num + ".jpg' />";
 
 After some digging, we find this snippet of code, which uses the value from the URL. It looks like the server is just taking this value and using it to determine which image to load. So, if we alter that part of the URL, we can control the source of the image that is added to the page!
 
-Let's try going to the URL ```https://xss-game.appspot.com/level3/frame#asdf``` and see what happens. 
+Let's try going to the URL ```https://xss-game.appspot.com/level3/frame#asdf```{:.language-markdown} and see what happens. 
 
 ![A message that says "image failed to load"](/assets/img/google-xss/google-xss-level-3-failed.png)
 
@@ -50,9 +50,9 @@ All that we can see from an initial look at the webpage is that it tried to load
 
 ![A snippet of code showing an image with a strange URL"](/assets/img/google-xss/google-xss-level-3-inspect.png)
 
-Well, now we know exactly what happens with the URL parameter. It goes straight into the image ```src``` to determine which image is fetched. That's pretty cool, but how do we use that to run Javascript on the webpage? 
+Well, now we know exactly what happens with the URL parameter. It goes straight into the image ```src```{:.language-markdown} to determine which image is fetched. That's pretty cool, but how do we use that to run Javascript on the webpage? 
 
-One idea is to revisit our solution from [the previous level.](/Google-XSS-Game-Level-3/) We know from level 2 that if the webpage loads an ```<img>``` tag with an invalid source, we can use the ```onerror``` attribute to execute malicious Javascript code. We also know that on our current level, we can force the webpage to render an image that doesn't load, such as ```<img src='/static/level3/cloudWhateverYouWant.jpg' />```. Wouldn't it be nifty if we could also add in an ```onerror``` attribute on that image?
+One idea is to revisit our solution from [the previous level.](/Google-XSS-Game-Level-3/) We know from level 2 that if the webpage loads an ```<img>```{:.language-markdown} tag with an invalid source, we can use the ```onerror```{:.language-markdown} attribute to execute malicious Javascript code. We also know that on our current level, we can force the webpage to render an image that doesn't load, such as ```<img src='/static/level3/cloudWhateverYouWant.jpg' />```{:.language-markdown}. Wouldn't it be nifty if we could also add in an ```onerror```{:.language-markdown} attribute on that image?
 
 We want to turn this:
 
@@ -68,27 +68,27 @@ Into this:
 
 
 
-If you compare the two, you can see that we just inserted the ```onerror``` attribute after the ```src``` attribute. But how do we actually do that? Let's look back at the source code for the website again.
+If you compare the two, you can see that we just inserted the ```onerror```{:.language-markdown} attribute after the ```src```{:.language-markdown} attribute. But how do we actually do that? Let's look back at the source code for the website again.
 
 ```javascript
 html += "<img src='/static/level3/cloud" + num + ".jpg' />";
 ```
 
-We can see that the site takes whatever we give it and appends it to the ```<img>``` string. So, what if we just try the simplest solution: enter in the missing section of our target code and see what happens.
+We can see that the site takes whatever we give it and appends it to the ```<img>```{:.language-markdown} string. So, what if we just try the simplest solution: enter in the missing section of our target code and see what happens.
 
-We want the final HTML string to say ```<img src='/static/level3/cloud' onerror="alert(1)".jpg' />```, so the missing part of our string is ```' onerror="alert(1)"```.
+We want the final HTML string to say ```<img src='/static/level3/cloud' onerror="alert(1)".jpg' />```{:.language-markdown}, so the missing part of our string is ```' onerror="alert(1)"```{:.language-markdown}.
 
 Let's try refreshing the page with that parameter in the URL and see what happens.
 
 !["An alert telling us that we finished level 3](/assets/img/google-xss/google-xss-level-3-solved.png)
 
-The final solution was to use the URL ```https://xss-game.appspot.com/level3/frame#' onerror="alert(1)"```. 
+The final solution was to use the URL ```https://xss-game.appspot.com/level3/frame#' onerror="alert(1)"```{:.language-markdown}. 
 
 
 
 #### Recap
 
-In the end, we solved this level using the same method as [level two:](/Google-XSS-Game-Level-2/) we made the webpage attempt to load an image with an invalid source, and then executed our code through the ```onerror``` event when the image inevitably didn't load. The only difference from last level is the method of inserting our payload. 
+In the end, we solved this level using the same method as [level two:](/Google-XSS-Game-Level-2/) we made the webpage attempt to load an image with an invalid source, and then executed our code through the ```onerror```{:.language-markdown} event when the image inevitably didn't load. The only difference from last level is the method of inserting our payload. 
 
 For this level, we had to figure out how to use query parameters and read the source code to see how they are used.
 

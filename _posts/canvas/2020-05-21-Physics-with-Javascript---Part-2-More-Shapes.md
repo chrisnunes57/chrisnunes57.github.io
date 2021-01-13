@@ -12,15 +12,15 @@ link:
 
 #### Intro
 
-In the previous post, we set up an HTML page with a Canvas element. Then, we drew up one single circle in the middle of the page. In this post, we'll create a `Circle` class so that we can easily generate new circles in our canvas.
+In the previous post, we set up an HTML page with a Canvas element. Then, we drew up one single circle in the middle of the page. In this post, we'll create a `Circle`{:.language-markdown} class so that we can easily generate new circles in our canvas.
 
 If you didn't read that previous post, the code for it is online [here](https://codepen.io/chrisnunes57/pen/GRpzGNr). You should definitely read it though. Please give me more web traffic.
 
 #### Creating a Javascript Class
 
-A lot of people don't actually realize it, but ever since the release of ECMAScript in 2015, you can actually use the `class` keyword in Javascript to replace prototype-based classes. It doesn't introduce any object-oriented behavior to the language, but allows you to simulate it pretty well.
+A lot of people don't actually realize it, but ever since the release of ECMAScript in 2015, you can actually use the `class`{:.language-markdown} keyword in Javascript to replace prototype-based classes. It doesn't introduce any object-oriented behavior to the language, but allows you to simulate it pretty well.
 
-We're going to create a `Circle` class so that we can easily draw circles. Let's scrap the Javascript code from last time and replace it with this:
+We're going to create a `Circle`{:.language-markdown} class so that we can easily draw circles. Let's scrap the Javascript code from last time and replace it with this:
 
 ```javascript
 class Circle {
@@ -32,7 +32,7 @@ class Circle {
 
 If you're familiar with object-oriented programming, you know what this is. If not, you can read about it [on the MDN website.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) Essentially, we're able to create objects with the properties that a circle would have.
 
-For example, creating a variable like `let circ = new Circle(10)` will create a Circle object with a `size` property of 10.
+For example, creating a variable like `let circ = new Circle(10)`{:.language-markdown} will create a Circle object with a `size`{:.language-markdown} property of 10.
 
 #### More Properties
 
@@ -45,7 +45,7 @@ Right now, our object only has one property: the radius of the circle. Here are 
     - Keeps track of the vertical position
 ```
 
-However, instead of passing these variables into the object, it would be more fun if the intial `(x, y)` coordinate was generated randomly. So, we can update our `Circle` class with those randomly generated properties.
+However, instead of passing these variables into the object, it would be more fun if the intial `(x, y)`{:.language-markdown} coordinate was generated randomly. So, we can update our `Circle`{:.language-markdown} class with those randomly generated properties.
 
 ```javascript
 class Circle {
@@ -57,9 +57,9 @@ class Circle {
 }
 ```
 
-If you aren't familiar with `Math.random()`, it is a method that returns a random decimal number anywhere in the range `0` to `0.99999`. This is not exactly useful for getting  a random X or Y value, because any value less that 1 will have your object in the top left corner of the screen.
+If you aren't familiar with `Math.random()`{:.language-markdown}, it is a method that returns a random decimal number anywhere in the range `0`{:.language-markdown} to `0.99999...`{:.language-markdown}. This is not exactly useful for getting  a random X or Y value, because any value less that 1 will have your object in the top left corner of the screen.
 
-Instead, we use `Math.random() * 500`, where 500 is the size of each screen dimension. This ensures a range that spans the entire screen. Now if we run our code...
+Instead, we use `Math.random() * 500`{:.language-markdown}, where 500 is the size of each screen dimension. This ensures a range that spans the entire screen. Now if we run our code...
 
 <p class="html">
 <style>
@@ -72,7 +72,7 @@ Instead, we use `Math.random() * 500`, where 500 is the size of each screen dime
 </p>
 
 
-Oops, we have nothing. We created our `Circle` object, but we never actually drew it. Let's expand our `Circle` class by giving it a `draw()` method so that it can paint itself on the canvas. That would look like this:
+Oops, we have nothing. We created our `Circle`{:.language-markdown} object, but we never actually drew it. Let's expand our `Circle`{:.language-markdown} class by giving it a `draw()`{:.language-markdown} method so that it can paint itself on the canvas. That would look like this:
 
 ```javascript
 class Circle {
@@ -93,7 +93,7 @@ class Circle {
 }
 ```
 
-Now, let's try creating a circle. Now that we have our fancy `Circle` class, we can create and draw a circle in just two lines of code.
+Now, let's try creating a circle. Now that we have our fancy `Circle`{:.language-markdown} class, we can create and draw a circle in just two lines of code.
 
 ```javascript
 let c = new Circle(20);
@@ -157,4 +157,4 @@ The finished code after this tutorial can be seen in the CodePen [here.](https:/
 
 #### Conclusion
 
-That's it for this post. Next time, we'll expand our `Circle` class to move our circles around the canvas.
+That's it for this post. Next time, we'll expand our `Circle`{:.language-markdown} class to move our circles around the canvas.

@@ -18,7 +18,7 @@ Now your job is to find the total Hamming distance between all pairs of the give
 
 **Example:**
 
-```
+```markdown
 Input: 4, 14, 2
 
 Output: 6
@@ -32,8 +32,8 @@ HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 
 
 **Note:**
 
-1. Elements of the given array are in the range of `0 ` to `10^9`
-2. Length of the array will not exceed `10^4`. 
+1. Elements of the given array are in the range of `0`{:.language-markdown} to `10^9`{:.language-markdown}
+2. Length of the array will not exceed `10^4`{:.language-markdown}. 
 
 ### Solution 1: Not good enough.
 
@@ -62,11 +62,11 @@ class Solution:
         return count
 ```
 
-This first solution was the first, most basic thing that I came up with. We create a helper method, `hammingDistance()`, that returns the hamming distance between two numbers.
+This first solution was the first, most basic thing that I came up with. We create a helper method, `hammingDistance()`{:.language-markdown}, that returns the hamming distance between two numbers.
 
 Then, we use a nested loop to compare every possible pair of numbers and add up their hamming distances. This solution is valid and works, but does not pass every test case. 
 
-That is because the time complexity of this solution is `O(n * n)`, due to the nested `for` loops. This is not good enough to pass larger test cases, and it appears that we need to find a way to reduce the order to `O(n)`. 
+That is because the time complexity of this solution is `O(n * n)`{:.language-markdown}, due to the nested `for`{:.language-markdown} loops. This is not good enough to pass larger test cases, and it appears that we need to find a way to reduce the order to `O(n)`{:.language-markdown}. 
 
 
 
@@ -94,13 +94,13 @@ class Solution:
         return count
 ```
 
-This solution also has nested `for` loops, but it runs in order `O(n)` time. This is because, unlike in the previous solution, the outer loop does not change based on the length of `nums`. Instead, we iterate exactly 32 times, no matter what.
+This solution also has nested `for`{:.language-markdown} loops, but it runs in order `O(n)`{:.language-markdown} time. This is because, unlike in the previous solution, the outer loop does not change based on the length of `nums`{:.language-markdown}. Instead, we iterate exactly 32 times, no matter what.
 
-These 32 iterations are to loop through each bit position in our ints. Given the constraints of the problem, specifically the one that says "Elements of the given array are in the range of `0 ` to `10^9`", we know that each element in `nums` will be a 32-bit integer. 
+These 32 iterations are to loop through each bit position in our ints. Given the constraints of the problem, specifically the one that says "Elements of the given array are in the range of `0 `{:.language-markdown} to `10^9`{:.language-markdown}", we know that each element in `nums`{:.language-markdown} will be a 32-bit integer. 
 
 So, for each bit position, we loop through and count how many numbers have that bit set to 1, as well as how many numbers have that bit set to 0. Since we're no longer generating each possible pair manually, we have to figure out how to calculate how many differences there will be without actually solving each pair.
 
-The number of differences at each bit index is actually equal to `num_zeros * num_ones`, where these variables represent how many zeros and ones there are at that index. I'm honestly not really sure how to prove this, but it works. More thinking required.
+The number of differences at each bit index is actually equal to `num_zeros * num_ones`{:.language-markdown}, where these variables represent how many zeros and ones there are at that index. I'm honestly not really sure how to prove this, but it works. More thinking required.
 
 
 

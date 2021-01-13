@@ -10,7 +10,7 @@ tag:
 link: https://leetcode.com/problems/unique-paths/
 ---
 
-A robot is located at the top-left corner of a *m* x *n* grid (marked 'Start' in the diagram below).
+A robot is located at the top-left corner of a `*m* x *n*`{:.language-markdown} grid (marked 'Start' in the diagram below).
 
 The robot can only move either down or right at any point in time.  The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
 
@@ -25,7 +25,7 @@ Above is a 7 x 3 grid. How many possible unique paths are there?
 
 **Example 1:**
 
-```
+```markdown
 Input: m = 3, n = 2
 Output: 3
 Explanation:
@@ -37,7 +37,7 @@ From the top-left corner, there are a total of 3 ways to reach the bottom-right 
 
 **Example 2:**
 
-```
+```markdown
 Input: m = 7, n = 3
 Output: 28
 ```
@@ -46,8 +46,8 @@ Output: 28
 
 **Constraints:**
 
-- `1 <= m, n <= 100`
-- It's guaranteed that the answer will be less than or equal to `2 * 10 ^ 9`.
+- `1 <= m, n <= 100`{:.language-markdown}
+- It's guaranteed that the answer will be less than or equal to `2 * 10 ^ 9`{:.language-markdown}.
 
 
 

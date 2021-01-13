@@ -1,5 +1,6 @@
 ---
 layout: compress
+isPost: true
 ---
 
 <!DOCTYPE html>
@@ -8,8 +9,8 @@ layout: compress
 {% include header.html %}
 
 <body>
-  {% include navbar.html %}
-  <div class="wrapper post">
+  {% include navbar.html pageTab="Post" %}
+  <div class="wrapper post container">
     <main class="page-content" aria-label="Content">
       <article itemscope itemtype="https://schema.org/BlogPosting">
 
@@ -20,7 +21,7 @@ layout: compress
             <span itemprop="keywords">
               {% for tag in tags %}
               <a class="tag"
-                href="/tags/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
+                href="/categories/#{{tag | downcase | slugify}}">{{tag | upcase }}</a>{% unless forloop.last %},{% endunless %}
               {% endfor %}
             </span>
           </div>
@@ -67,7 +68,7 @@ layout: compress
   </div>
 
   {% include footer.html %}
-
+  <script src="../assets/js/prism.js"></script>
 </body>
 
 </html>
