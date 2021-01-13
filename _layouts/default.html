@@ -11,7 +11,9 @@ layout: compress
     <main aria-label="Content">
       {{ content }}
     </main>
-    {% include footer.html %}
+    {% if !page.home %}
+      {% include footer.html %}
+    {% endif %}
   </div>
 </body>
 </html>

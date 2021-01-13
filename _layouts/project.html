@@ -9,7 +9,7 @@ isPost: true
 {% include header.html %}
 
 <body>
-  {% include navbar.html pageTab="Post" %}
+  {% include navbar.html pageTab="Projects" %}
   <div class="wrapper post container">
     <main class="page-content" aria-label="Content">
       <article itemscope itemtype="https://schema.org/BlogPosting">
@@ -27,6 +27,7 @@ isPost: true
           </div>
           {% endif %}
           <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
+          <p class="header-subtitle">{{ page.description | escape }}</p>
           {% if page.date %}
           <div class="post-meta">
             <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">

@@ -1,0 +1,34 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+{% include header.html %}
+
+<body>
+  {% include navbar.html %}
+  <div class="blog container">
+    <header class="header">
+      <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}</h1>
+    </header>
+    <main class="page-content projects" aria-label="Content">
+      {% for project in site.projects %}
+        <article class="project-item">
+          <a class="no-highlight" href="{{ project.url }}">
+            <h4 class="project-item-title">
+              <span class="fake-link">{{ project.title | escape }}</span>
+            </h4>
+            <div class="project-thumbnail-wrapper">
+              <img src="{{ project.thumbnail }}" alt="{{ project.thumbnail_alt}}" />
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </main>
+    {% include footer.html %}
+  </div>
+</body>
+
+</html>

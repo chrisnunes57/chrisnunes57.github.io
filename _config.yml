@@ -6,7 +6,6 @@ lang: en-US
 timezone: America/Chicago
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/chrisnunes57/chrisnunes57.github.io
-mode: dark # default theme "dark" | "light"
 
 # Profile settings
 author:
@@ -27,6 +26,8 @@ fb_appid:
 # Collection setting
 collections:
   posts:
+    output: true
+  projects:
     output: true
 
 # Markdown settings
