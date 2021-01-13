@@ -2,7 +2,7 @@
 layout: project
 title: Touchy Feely - Using Haptic Emojis to Represent Emotions in Instant Messaging
 description: Touchy Feely - Using Haptic Emojis to Represent Emotions in Instant Messaging
-thumbnail: /assets/img/touchy-feely/thumbnail.png
+thumbnail: /assets/img/touchy-feely/thumbnail.PNG
 ---
 
 ## Introduction 
@@ -58,7 +58,7 @@ The methodology of this study was comprised of 3 primary components. First was t
 
 In order to consider the feasibility of using a chat app such as Touchy Feely on a large scale, we made it a goal to create a chat app with an intuitive user interface, to mimic the look and feel of some of the most popular chat apps used today. To implement a good user interface, we used Swift UI [[3]](#references) which is a library available to be used with the Apple development environment Xcode. Swift UI provides standard user interface components that are used in many iOS apps, including Apple’s own messaging app. These components were used to provide a sense of familiarity to users and sought to make the user experience similar to one found in any other messaging app.
 
-![A cell phone screen with text messages on it](/assets/img/touchy-feely/chat.png)
+![A cell phone screen with text messages on it](/assets/img/touchy-feely/chat.PNG)
 
 <p class="caption">The view of a single chat</p>
 
@@ -126,7 +126,7 @@ Throughout the process of designing these haptic patterns, we changed and refine
 
 One piece of feedback received many times throughout the development of these emotional patterns was that implementing six different emotions made it more difficult for each pattern to be memorable and distinct from one another. Because of this, we changed the number of ’Haptic Emojis’ from six to four, as research has been conducted that considers only four basic human emotions [[9]](#references). To do this, we removed surprise and disgust, as it has been suggested that these two emotions are simply types of fear and anger, respectively. Thus, we were left with 4 Haptic Emojis which were implemented in Touchy Feely, anger, fear, sadness, and happiness.
 
-![A menu on a phone screen, showing four different emotions](/assets/img/touchy-feely/menu.png)
+![A menu on a phone screen, showing four different emotions](/assets/img/touchy-feely/menu.PNG)
 
 <p class="caption">The interface to send one of four "haptic emojis"</p>
 
@@ -150,7 +150,7 @@ Two distinct and interesting results emerged from this study. First was the inte
 
 In the first part of the experiment, users were usually only able to identify one or two out of the four haptic emojis correctly. The happiness Emoji was most commonly mistaken for fear. Multiple users noted that the emoji reminded them of a heartbeat, due to the pattern of two beats spaced closely together. One users stated that the heartbeat reminded them of the increased heartbeat that occurs when you are in a fight or flight situation. The sadness Emoji was identified correctly nearly every time, with participants using words such as ”mellow”, ”subdued”, and ”sigh” to describe the haptic pattern. Fear was often mistaken for anger or happiness. One user stated that it reminded them of ”fists pounding on a door” while another said the pattern was reminiscent of clapping. Anger was mistaken once for happiness, but most users noted that the pattern felt like a low growl.
 
-![A phone screen with four different buttons, each labeled with an emotion](/assets/img/touchy-feely/home.png)
+![A phone screen with four different buttons, each labeled with an emotion](/assets/img/touchy-feely/home.PNG)
 
 <p class="caption">The home screen of "Touchy Feely"</p>
 
