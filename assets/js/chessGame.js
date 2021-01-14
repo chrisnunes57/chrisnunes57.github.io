@@ -26,8 +26,8 @@ if (gameID) {
 
 challengeButton.onclick = async(e) => {
     // // create challenge
-    // let URL = `https://morning-wildwood-47395.herokuapp.com/challenge`;
-    let URL = `http://localhost:5000/challenge`;
+    let URL = `https://morning-wildwood-47395.herokuapp.com/challenge`;
+    // let URL = `http://localhost:5000/challenge`;
 
     eventLoop(URL, handleChallengeStatus);
 
