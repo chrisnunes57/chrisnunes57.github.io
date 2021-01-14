@@ -441,6 +441,7 @@ p.header-subtitle {
   right: 12vw;
   top: 17vh;
   max-width: 220px;
+  color: white;
 
   #status {
     margin: 30px 0;
@@ -474,6 +475,25 @@ p.header-subtitle {
     &:active {
       background-color: #748da8;
     }
+  }
+}
+
+.fader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.6);
+  transition: 0.3s opacity;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transition-delay: 0.4s;
   }
 }
 

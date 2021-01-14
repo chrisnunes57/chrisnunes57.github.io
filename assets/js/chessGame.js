@@ -7,6 +7,7 @@ const exitGame = document.getElementById("exit-game");
 const status = document.getElementById("status");
 const challengeButton = document.getElementById("challenge");
 const controls = document.getElementById("controls");
+const fader = document.getElementById("fader");
 const games = {};
 const boards = {};
 
@@ -60,7 +61,10 @@ function showChessboard() {
     boardFace.style = `--data-scale: ${scaleFactor}`;
 
     chessboardImage.classList.add("active");
-    window.setTimeout(() => { controls.classList.add("active");}, 700);
+    fader.classList.add("active");
+    window.setTimeout(() => { 
+        controls.classList.add("active");
+    }, 700);
 
     exitGame.onclick = (e) => {
         if (!boardFace.contains(e.target)) {
@@ -73,6 +77,7 @@ function hideChessboard() {
     exitGame.onclick = null;
     chessboardImage.classList.remove("active");
     controls.classList.remove("active");
+    fader.classList.remove("active");
 }
 
 function beginGame() {
