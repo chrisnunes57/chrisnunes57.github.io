@@ -43,6 +43,10 @@ $on-widescreen: 1152px;
   font-size: $base-font-size * $ratio;
 }
 
+* {
+  max-width: 100%;
+}
+
 body {
   width: 100%;
   margin: 0;

@@ -479,6 +479,7 @@ p.header-subtitle {
 }
 
 .fader {
+  display: none;
   position: absolute;
   width: 100vw;
   height: 100vh; 
@@ -488,12 +489,9 @@ p.header-subtitle {
   bottom: 0;
   margin: auto;
   background-color: rgba(0,0,0, 0.6);
-  transition: 0.3s opacity;
-  opacity: 0;
 
   &.active {
-    opacity: 1;
-    transition-delay: 0.4s;
+    display: block;
   }
 }
 

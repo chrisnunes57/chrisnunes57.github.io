@@ -1,8 +1,13 @@
 const STARTING_POS = "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2";
 
+const status = document.getElementById("status");
+
+function setStatus(message) {
+    status.innerText = message;
+}
+
 class Board {
     constructor(gameID=null) {
-        console.log("made board for game " + gameID);
 
         const config = {
             draggable: true,
@@ -27,14 +32,8 @@ class Board {
 
     updateGame = (content) => {
 
-        // we're playing now
-        if (!this.gameActive) {
-            this.gameActive = true;
-        }
-
         let data = JSON.parse(content);
 
-        console.log("board data");
         console.log(data);
 
         // check if this request contains user information
@@ -46,8 +45,6 @@ class Board {
                 this.pieceColor = "b";
                 this.guiBoard.orientation("black");
             }
-
-            console.log("WEBSITE PIECE COLOR IS " + this.pieceColor)
         }
 
         let moves;
@@ -58,21 +55,36 @@ class Board {
             moves = data.moves.split(" ");
         }
 
-        if (this.game.fen() === STARTING_POS) {
-            // we need to catch up on moves
-
-            moves.forEach(move => {
-                this.game.move(move, { sloppy: true });
-            })
-
-            // game is updated, now update gui
+        if (!this.gameActive) {
+            // many moves
+            moves.forEach((move) => {
+                this.game.move(move, {sloppy: 1});
+            });
         } else {
             // we only have one new move
             this.game.move(moves[moves.length - 1], { sloppy: true });
-
         }
 
+        if ((moves.length % 2 == 0 && this.pieceColor === "b") || (moves.length % 2 == 1 && this.pieceColor === "w")) {
+            setStatus("Waiting....");
+        } else {
+            setStatus("Your Turn!");
+        }
         this.updateGui();
+
+        // check if the game is over
+        if ((data.state && data.state.winner) || data.winner) {
+            let winner = data.winner ?? data.state.winner;
+            if (winner.charAt(0) === this.pieceColor) {
+                setStatus("You win! Congrats!");
+            } else {
+                setStatus("You lose! Sorry :(");
+            }
+
+            this.gameActive = false;
+            window.localStorage.clear();
+            return;
+        } 
     }
 
     updateGui = () => {
