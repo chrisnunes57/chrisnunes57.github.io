@@ -36,7 +36,7 @@ async function incrementPageViews(url) {
         url = url.substring(7);
     }
 
-    url = url.replace("/", "\\\\")
+    url = url.replaceAll("/", "\\\\")
 
     db.collection('urls').doc(url).set({ 
         views: firebase.firestore.FieldValue.increment(1), 

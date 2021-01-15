@@ -15,7 +15,8 @@ class Board {
             position: STARTING_POS,
             onSnapEnd: this.onSnapEnd,
             onDragStart: this.onDragStart,
-            onDrop: this.onDrop
+            onDrop: this.onDrop,
+            pieceTheme: "/assets/img/chess/{piece}.png"
         }
 
         this.gameActive = false;

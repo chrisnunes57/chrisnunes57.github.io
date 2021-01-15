@@ -134,6 +134,7 @@ p.html {
 .container {
   max-width: 1160px;
   margin: 100px auto;
+  padding-left: 30px;
 }
 
 .home {
@@ -197,6 +198,7 @@ p.html {
   justify-content: flex-end;
   max-width: 1160px;
   margin: 0 auto;
+  padding-left: 30px;
 }
 
 nav {
@@ -481,8 +483,6 @@ p.header-subtitle {
 .fader {
   display: none;
   position: absolute;
-  width: 100vw;
-  height: 100vh; 
   top: 0;
   left: 0;
   right: 0;
