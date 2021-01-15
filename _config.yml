@@ -58,6 +58,10 @@ jekyll_compose:
 sass:
   style: compressed
 
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
+
 include:
   - _redirects
   - .htaccess
@@ -78,5 +82,6 @@ plugins:
   - jekyll-sass-converter
   - jekyll-sitemap
   - jekyll-postfiles
+  - jekyll-minifier
 
 theme: jekyll-theme-minimal
