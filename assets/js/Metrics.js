@@ -14,6 +14,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const startTime = Date.now();
 let url = parseUrl();
+let viewRef;
 
 // detect which event we need to use
 let isOnIOS = navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i);
@@ -24,8 +25,8 @@ setupTracking();
 function setupTracking() {
 
     // don't want to track localhost stats
-    if (url.includes("localhost:"))
-        return;
+    // if (url.includes("localhost:"))
+    //     return;
 
     // update this url with page view
     updatePageViews();
@@ -37,20 +38,28 @@ async function updatePageViews() {
         window.localStorage.setItem("user", generateToken(12));
     }
 
+    // update main view count
     db.collection("urls").doc(url).set({
         views: firebase.firestore.FieldValue.increment(1)
     }, { merge: true });
+
+    // add specific view object
+    viewRef = await db.collection('urls').doc(url).collection("views").add({
+        user: window.localStorage.getItem("user"),
+        timestamp: startTime,
+        url: url
+    });
+
+    
 }
 
 // log end time when done
-window.addEventListener(eventName, (e) => {
-    console.log("unloading")
-    db.collection('urls').doc(url).collection("views").add({
-        user: window.localStorage.getItem("user"),
-        timestamp: startTime,
+// @TODO: make this work on mobile?
+window.addEventListener(eventName, async (e) => {
+    console.log("in here")
+    viewRef.set({
         duration: Date.now() - startTime,
-        url: url
-    });
+    }, {merge: true});
 });
 
 // converts window.location.href to a firestore-usable string
