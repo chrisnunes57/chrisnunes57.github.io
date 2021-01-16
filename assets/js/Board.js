@@ -66,7 +66,9 @@ class Board {
             this.game.move(moves[moves.length - 1], { sloppy: true });
         }
 
-        if ((moves.length % 2 == 0 && this.pieceColor === "b") || (moves.length % 2 == 1 && this.pieceColor === "w")) {
+        if (moves[0] !== "" && ((moves.length % 2 == 0 && this.pieceColor === "b") || (moves.length % 2 == 1 && this.pieceColor === "w"))) {
+            console.log("moves:");
+            console.log(moves)
             setStatus("Waiting....");
         } else {
             setStatus("Your Turn!");
@@ -83,7 +85,8 @@ class Board {
             }
 
             this.gameActive = false;
-            window.localStorage.clear();
+            window.localStorage.removeItem("gameID");
+            window.localStorage.removeItem("fen");
             return;
         } 
     }

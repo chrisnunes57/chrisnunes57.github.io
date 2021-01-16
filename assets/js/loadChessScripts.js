@@ -1,5 +1,4 @@
 if (window.matchMedia("screen and (min-device-width: 1024px)").matches) {
-    console.log("on desktop")
 
     const jquery = document.createElement("script");
     jquery.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js");

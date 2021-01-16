@@ -17,7 +17,6 @@ let board = new Board();
 
 // initial check to see if there is an existing game
 let gameID = window.localStorage.getItem("gameID");
-console.log(gameID);
 
 if (gameID) {
     setUpGameListener(gameID);
@@ -26,8 +25,8 @@ if (gameID) {
 
 challengeButton.onclick = async(e) => {
     // // create challenge
-    let URL = `https://morning-wildwood-47395.herokuapp.com/challenge`;
-    // let URL = `http://localhost:5000/challenge`;
+    // let URL = `https://morning-wildwood-47395.herokuapp.com/challenge`;
+    let URL = `http://localhost:5000/challenge`;
 
     eventLoop(URL, handleChallengeStatus);
 
@@ -86,7 +85,6 @@ function hideChessboard() {
 
 function handleChallengeStatus(rawData) {
     let data = JSON.parse(rawData);
-    console.log(data)
     if (data.type === "challengeCreated") {
         // check for 'too many requests error'
         if (data.gameID === "Too Many Requests") {
@@ -108,12 +106,10 @@ function setUpGameListener(gameID) {
     // start listening for game state updates
     eventLoop("https://lichess.org/api/board/game/stream/" + gameID, board.updateGame);
     board.gameID = gameID;
-    console.log("listening for updates for game " + gameID)
 }
 
 async function eventLoop(URL, callback) {
     try {
-        console.log("beginning new event loop")
         const response = await fetch(URL, {
             headers: {
                 "Authorization": "Bearer 3wErqfxmNrXAP3jR"
@@ -129,7 +125,5 @@ async function eventLoop(URL, callback) {
             if (content)
                 callback(content);
         }
-
-        console.log("event loop ended");
     } catch {}
 }

@@ -19,16 +19,21 @@ function setupTracking() {
     let url = window.location.href;
 
     // don't want to track localhost stats
-    // if (url.includes("localhost:"))
-    //     return;
-
-    console.log("made it ")
+    if (url.includes("localhost:"))
+        return;
 
     // update this url with page view
     incrementPageViews(url);
 }
 
 async function incrementPageViews(url) {
+
+    let uniqueView = 0;
+
+    if (window.localStorage.getItem("user") === null) {
+        window.localStorage.setItem("user", generateToken(12));
+        uniqueView = 1;
+    }
     
     if (url.startsWith("https")) {
         url = url.substring(8);
@@ -40,6 +45,17 @@ async function incrementPageViews(url) {
 
     db.collection('urls').doc(url).set({ 
         views: firebase.firestore.FieldValue.increment(1), 
+        uniqueViews: firebase.firestore.FieldValue.increment(uniqueView),
         url: url 
     }, { merge: true });
+}
+
+function generateToken(length) {
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
 }
