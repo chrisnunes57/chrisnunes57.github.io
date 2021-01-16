@@ -10,7 +10,10 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-let db = firebase.firestore();
+// setup stuff
+const db = firebase.firestore();
+const startTime = Date.now();
+
 
 setupTracking();
 
@@ -19,20 +22,17 @@ function setupTracking() {
     let url = window.location.href;
 
     // don't want to track localhost stats
-    if (url.includes("localhost:"))
-        return;
+    // if (url.includes("localhost:"))
+    //     return;
 
     // update this url with page view
-    incrementPageViews(url);
+    updatePageViews(url);
 }
 
-async function incrementPageViews(url) {
-
-    let uniqueView = 0;
+async function updatePageViews(url) {
 
     if (window.localStorage.getItem("user") === null) {
         window.localStorage.setItem("user", generateToken(12));
-        uniqueView = 1;
     }
     
     if (url.startsWith("https")) {
@@ -43,11 +43,17 @@ async function incrementPageViews(url) {
 
     url = url.replaceAll("/", "\\\\")
 
-    db.collection('urls').doc(url).set({ 
-        views: firebase.firestore.FieldValue.increment(1), 
-        uniqueViews: firebase.firestore.FieldValue.increment(uniqueView),
-        url: url 
+    let time = Date.now();
+
+    db.collection("urls").doc(url).set({
+        views: firebase.firestore.FieldValue.increment(1)
     }, { merge: true });
+
+    db.collection('urls').doc(url).collection("views").add({ 
+        user: window.localStorage.getItem("user"), 
+        timestamp: startTime,
+        url: url 
+    });
 }
 
 function generateToken(length) {
