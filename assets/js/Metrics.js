@@ -15,6 +15,10 @@ const db = firebase.firestore();
 const startTime = Date.now();
 let url = parseUrl();
 
+// detect which event we need to use
+let isOnIOS = navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i);
+let eventName = isOnIOS ? "pagehide" : "beforeunload";
+
 setupTracking();
 
 function setupTracking() {
@@ -39,7 +43,7 @@ async function updatePageViews() {
 }
 
 // log end time when done
-window.addEventListener("beforeunload", (e) => {
+window.addEventListener(eventName, (e) => {
     console.log("unloading")
     db.collection('urls').doc(url).collection("views").add({
         user: window.localStorage.getItem("user"),
