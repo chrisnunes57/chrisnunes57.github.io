@@ -13,47 +13,55 @@ firebase.initializeApp(firebaseConfig);
 // setup stuff
 const db = firebase.firestore();
 const startTime = Date.now();
-
+let url = parseUrl();
 
 setupTracking();
 
 function setupTracking() {
 
-    let url = window.location.href;
-
     // don't want to track localhost stats
-    // if (url.includes("localhost:"))
-    //     return;
+    if (url.includes("localhost:"))
+        return;
 
     // update this url with page view
-    updatePageViews(url);
+    updatePageViews();
 }
 
-async function updatePageViews(url) {
+async function updatePageViews() {
 
     if (window.localStorage.getItem("user") === null) {
         window.localStorage.setItem("user", generateToken(12));
     }
-    
-    if (url.startsWith("https")) {
-        url = url.substring(8);
-    } else {
-        url = url.substring(7);
-    }
-
-    url = url.replaceAll("/", "\\\\")
-
-    let time = Date.now();
 
     db.collection("urls").doc(url).set({
         views: firebase.firestore.FieldValue.increment(1)
     }, { merge: true });
+}
 
-    db.collection('urls').doc(url).collection("views").add({ 
-        user: window.localStorage.getItem("user"), 
+// log end time when done
+window.addEventListener("beforeunload", (e) => {
+    console.log("unloading")
+    db.collection('urls').doc(url).collection("views").add({
+        user: window.localStorage.getItem("user"),
         timestamp: startTime,
-        url: url 
+        duration: Date.now() - startTime,
+        url: url
     });
+});
+
+// converts window.location.href to a firestore-usable string
+function parseUrl() {
+    let temp = window.location.href;
+
+    if (temp.startsWith("https")) {
+        temp = temp.substring(8);
+    } else {
+        temp = temp.substring(7);
+    }
+
+    temp = temp.replaceAll("/", "\\\\");
+
+    return temp;
 }
 
 function generateToken(length) {
