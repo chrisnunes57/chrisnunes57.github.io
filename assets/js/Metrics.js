@@ -47,7 +47,8 @@ async function updatePageViews() {
     viewRef = await db.collection('urls').doc(url).collection("views").add({
         user: window.localStorage.getItem("user"),
         timestamp: startTime,
-        url: url
+        url: url,
+        device: navigator.userAgent
     });
 
     
