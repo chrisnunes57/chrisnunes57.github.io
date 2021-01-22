@@ -3,11 +3,11 @@
   external: false
 
 - title: Projects
-  url: /projects.html
+  url: /projects
   external: false
 
 - title: Blog
-  url: /blog.html
+  url: /blog
   external: false
 
 - title: Resume

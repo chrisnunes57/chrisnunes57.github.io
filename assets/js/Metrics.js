@@ -25,8 +25,8 @@ setupTracking();
 function setupTracking() {
 
     // don't want to track localhost stats
-    // if (url.includes("localhost:"))
-    //     return;
+    if (url.includes("localhost:"))
+        return;
 
     // update this url with page view
     updatePageViews();
