@@ -503,6 +503,10 @@ p.header-subtitle {
   display: block;
 }
 
+#chess-structure {
+  max-width: 700px;
+}
+
 @keyframes float {
 	0% {
 		transform: translatey(0px);
@@ -544,7 +548,7 @@ p.header-subtitle {
     padding-right: 20px;
   }
 
-  .page-content img {
+  #chess-structure {
     max-width: 100% !important;
   }
 }

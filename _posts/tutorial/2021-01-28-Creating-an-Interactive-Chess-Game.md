@@ -51,7 +51,7 @@ The actual structure of the program is bigger than it would seem, so I'm going t
 
 Here is a cheesy clip-art diagram of how the game is structured and how the data is passed around:
 
-![A diagram depicting how the app is structured. There are several different arrows showing how the website users are connected to the game.](/assets/img/chess-post/structure.png){:style="max-width: 700px"}
+![A diagram depicting how the app is structured. There are several different arrows showing how the website users are connected to the game.](/assets/img/chess-post/structure.png){:#chess-structure}
 
 In case that diagram was horribly uninstructive, here is a more detailed breakdown of each component of this system.
 
