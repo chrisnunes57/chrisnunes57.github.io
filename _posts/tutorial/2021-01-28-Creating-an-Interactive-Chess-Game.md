@@ -9,7 +9,6 @@ tag:
   - node
   - api
 link: /
-
 ---
 
 If you haven't noticed, if you go to [chrisnun.es](https://chrisnun.es/) on a desktop computer, there is a big chess board floating up and down. If you click on the board, you have the option to challenge me to a chess game, which can be played out in real time!
