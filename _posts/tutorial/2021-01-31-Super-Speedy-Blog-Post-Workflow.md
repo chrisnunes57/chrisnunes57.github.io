@@ -7,7 +7,8 @@ tag:
   - scripting
   - terminal
   - shell
-link: 
+  - tutorial
+link: /
 ---
 
 ## Introduction

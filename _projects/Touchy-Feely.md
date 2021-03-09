@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Touchy Feely - Using Haptic Emojis to Represent Emotions in Instant Messaging
+title: Touchy Feely
 description: Touchy Feely - Using Haptic Emojis to Represent Emotions in Instant Messaging
 thumbnail: /assets/img/touchy-feely/thumbnail.PNG
 ---

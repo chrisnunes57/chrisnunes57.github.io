@@ -1,6 +1,6 @@
 ---
 layout: project
-title: The Intersection of Sneakers and Javascript
+title: Javascript Sneakers
 description: The Intersection of Sneakers and Javascript, Sneaker Art using Javascript, CSS, and SVG
 link: https://poly-shoe.surge.sh
 thumbnail: /assets/img/sneaker-art/poly-shoe-big.png
