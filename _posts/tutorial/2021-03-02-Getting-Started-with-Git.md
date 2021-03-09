@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Beginner Series: Git and Github"
-date: 2021-03-02 18:57
+date: 2021-03-09 16:15
 description: How to get started with Git, a tool for version control and collaboration!
 tag:
   - git
