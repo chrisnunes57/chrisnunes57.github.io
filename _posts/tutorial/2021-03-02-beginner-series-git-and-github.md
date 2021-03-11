@@ -7,6 +7,7 @@ tag:
   - git
   - GitHub
   - tutorial
+  - beginner-series
 link: https://github.com/chrisnunes57
 ---
 
@@ -79,10 +80,12 @@ Each Git project is called a "repository". A repository tracks all the changes t
 Once on that page, you should see this view:
 
 ![A screen showing fields that you must fill out in order to create a new Git repository](/assets/img/git-intro/new-repo.png)
+<p class="caption">These are the steps to create a new repository</p>
 
 You have to fill out this form to create a new Git repository. You can fill out most of these fields with whatever you want, such as **Repository name** and **Description**. However, when creating this first repository, make sure that the **"Add a README file"** box is checked.
 
 ![An option called "Add a README file, with the checkbox clicked and selected](/assets/img/git-intro/add-readme.png)
+<p class="caption">Select the "Add a README file" option</p>
 
 This will create a single file called `README.md`{:.language-markdown} in your repository, instead of creating a new empty repository. The `README.md`{:.language-markdown} is the first thing people see when they view your repository on Github, so it is a great place to put a description of your project, or instructions on how to use it.
 
@@ -97,12 +100,14 @@ To clone our repository from Github, we need to view the repository online. It s
 When you have a specific repository open, you should see this view (with a different repository name and username):
 
 ![A view of a newly created Git repository. It shows all the files in the repository, as well as the name and description](/assets/img/git-intro/repo-view.png)
+<p class="caption">Your empty repository!</p>
 
 This shows you all the files that are in your repository, as well as other information such as the repository name, the description, and other useful things. This is a nice page to go to find any information you need about a repository. 
 
 To clone our repository, all we care about is the green button that says **Code**. If you click on it, it will open a little window showing you different ways to clone your repository. 
 
 ![A window showing different ways to clone a Git repository. The options are HTTPS, SSH, or Github CLI](/assets/img/git-intro/clone-repo.png)
+<p class="caption">You want the url that starts off "https://github.com/your_username/...."</p>
 
 These options (HTTPS, SSH, and Github CLI) all have different uses, but for this tutorial, we will use HTTPS. To clone your repository, first copy the URL that it shows you in the dialogue box. 
 
@@ -111,6 +116,7 @@ Then, open up a terminal window on your computer and navigate to the directory w
 Then, enter the command `git clone <github_url>`{:.language-markdown}, where `<github_url>`{:.language-markdown} is the HTTPS url that you copied a moment ago. If everything is set up correctly, the repository will be cloned, and you will see the following:
 
 ![A terminal screen showing the output of the git clone command. It shows how many files were downloaded, and that it successfully cloned the repository](/assets/img/git-intro/clone-output.png)
+<p class="caption">Cloning Git repository from the terminal</p>
 
 Once that command successfully executes, the repository will be on your computer, and there will be a folder on your computer with all the repository files on it. 
 
@@ -172,26 +178,31 @@ I am learning how to use Git and Github, and this is my first repository!
 Now that the change is done, we should make sure that Git has noticed. In your terminal window, navigate into the git repository. Once there, run `git status`{:.language-markdown}. You should see something like this:
 
 ![A terminal screen showing the output of the git status command. It shows that there is one modified file, and that it is not currently added to Git](/assets/img/git-intro/git-status.png)
+<p class="caption">The modified file is highlighted in red</p>
 
 As we can see, Git sees that `README.md`{:.language-markdown} has been modified. We can also see that Git says that there are "no changes added to commit". We can fix this by using the command `git add README.md`{:.language-markdown}. This command should give back no output (if all goes well).
 
 Once you have added the `README.md`{:.language-markdown} file, re-run `git status`{:.language-markdown} to see what has changed.
 
 ![A terminal screen showing the output of the git status command. It shows that there is still one modified file, and that it is now ready to be committed](/assets/img/git-intro/git-status-2.png)
+<p class="caption">Now that we have used 'git add', the file is green</p>
 
 Now, our modified `README.md`{:.language-markdown} is now ready to be committed! To commit the change, we use the `git commit -m "<message>"`{:.language-markdown} command, where `<message>`{:.language-markdown} is an informative message describing what changes were made. 
 
 To commit the `README.md`{:.language-markdown} changes, I would use the command `git commit -m "updated README with repo description"`{:.language-markdown}. As you can see, the message doesn't have to be particularly formal or long, it only has to describe the changes made.
 
 ![A terminal screen showing the output of the git commit command. It shows that there is one change included in the new commit](/assets/img/git-intro/git-commit.png)
+<p class="caption">Using 'git commit' with a commit message</p>
 
 Once you have run the `git commit`{:.language-markdown} command, we are ready to push our code to the remote repository. This command is simple: `git push`{:.language-markdown}. Running this command should give the following output: 
 
 ![A terminal screen showing the output of the git push command. It shows many changes were uploaded, and that the operation was a success](/assets/img/git-intro/git-push.png)
+<p class="caption">A lot of nonsense, but no errors!</p>
 
 If all goes well, our change should be pushed to the remote repository! We can easily verify that the changes are present by opening/refreshing the repository page on Github. Now that the `README.md`{:.language-markdown} is changed, so has the repository web page!
 
 ![A web page showing information about our repository. The description of the repository now shows the changes that we just uploaded](/assets/img/git-intro/repo-final.png)
+<p class="caption">Our repository shows our changes!</p>
 
 Woohoo! Let's review what we've done. 
 
@@ -221,6 +232,7 @@ In order to actually demonstrate the `git pull`{:.language-markdown} command, we
 To do this, view your repository on Github and find the "Edit README" button on the main page (circled in red).
 
 ![A web page showing information about our repository. There is a circle around a button that will let you edit your README file.](/assets/img/git-intro/edit-repo.png)
+<p class="caption">Click on the pen icon circled in red</p>
 
 Click on this button, and it will take you to a screen where you can edit your `README.md`{:.language-markdown} file. For the sake of this example, just change your `README.md`{:.language-markdown} file in some noticeable way.
 
@@ -237,6 +249,7 @@ I made this change from Github.com! :0
 Once you've edited the text to something you like, scroll down until you find the "Commit Changes" section of the page.
 
 ![A dialogue box prompting you to enter a message, and then commit your changes.](/assets/img/git-intro/commit-repo.png)
+<p class="caption">Add your commit message here</p>
 
 Just like we had to provide a commit message when using `git commit -m "<message>"`{:.language-markdown}, we will also need to provide a message when we make changes online. Once again, the message can be something simple, like `"Changed README from Github"`{:.language-markdown}. 
 
@@ -255,6 +268,7 @@ Once there, we just need to run one command: `git pull`{:.language-markdown}. Th
 If the command is executed successfully, you will see an output similar to the output from `git push`{:.language-markdown} or `git clone`{:.language-markdown}.
 
 ![A terminal screen showing the output of the git pull command. It shows that there is one newly-modified file, and that is was updated with a new change.](/assets/img/git-intro/git-pull.png)
+<p class="caption">We can see the new changes highlighted in green</p>
 
 Now if you open your `README.md`{:.language-markdown} file in a text editor, you'll see that the file has the new edit that you made on Github!
 
