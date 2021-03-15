@@ -15,12 +15,30 @@ layout: compress
     </header>
     <main class="page-content" aria-label="Content">
       {% for post in site.posts %}
-        <article class="post-item">
-          <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
-          <h4 class="post-item-title">
-            <a href="{{ post.url }}">{{ post.title | escape }}</a>
-          </h4>
-        </article>
+        {% unless post.tag contains "leetcode" %}
+          <article class="post-item">
+            <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+            <h4 class="post-item-title">
+              <a href="{{ post.url }}">{{ post.title | escape }}</a>
+            </h4>
+          </article>
+        {% endunless %}
+      {% endfor %}
+      <h1 style="margin-top: 70px;" class="header-title center" itemprop="headline">Leetcode Writeups</h1>
+      <p>In my journey to Leetcode mastery, I realized that while there were <b>many</b> Leetcode solutions online, there weren't
+        many quality writeups describing how to actually solve the problem.</p>
+      <p>The writeups below are some interesting Leetcode problems I've solved that I wanted to write about! They may not 
+        be the most efficient or beautiful, but they're mine!
+      </p>
+      {% for post in site.posts %}
+        {% if post.tag contains "leetcode" %}
+          <article class="post-item">
+            <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
+            <h4 class="post-item-title">
+              <a href="{{ post.url }}">{{ post.title | escape }}</a>
+            </h4>
+          </article>
+        {% endif %}
       {% endfor %}
     </main>
     {% include footer.html %}
